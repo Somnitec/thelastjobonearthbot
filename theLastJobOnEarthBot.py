@@ -23,23 +23,17 @@ def replaceChar(string):
             stringList[i]= ''
     result = ''.join(stringList)
     return result
-    
-    
-#    for char in string:
-#        print(char)
-#        if searchExp in char:
-#            char = char.replace(searchExp,replaceExp)
-#        newstring += char
-#    return newstring
-
-
 
 @route('/bot')
 def login():
     return '''
-        <body style="background-color:#000000;">
-        <form action="/bot" method="post">
-        <input name="say" type="text" autofocus autocomplete="off" placeholder="write to the bot here" style="
+<html>
+<head>
+    <title>Marie's chatbot</title>
+</head>
+<body style="background-color:#000000;">
+    <form action="/bot" method="post" id="masterform">
+        <input name="say" type="text" id="inputbox" autofocus autocomplete="off" placeholder="write to the bot here" style="
             color:white;
             background-color:#000000;
             height: 100%;
@@ -51,7 +45,18 @@ def login():
             font-size: 500%;
             ">            
         </form>
-        </body>
+        
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+
+    <script>
+    
+$("#masterform").submit(function(e) {
+  $("#inputbox").fadeOut("fast");
+});
+</script>
+
+</body>
+</html>
     '''
 
 @route('/bot', method='POST')
@@ -65,20 +70,13 @@ def do_bot():
     #response = replaceChar(response) #without this, sentances with " will not be said for some reason
   
     return '''
-        <script>
-            //var msg = new SpeechSynthesisUtterance();
-            //msg.rate = 0.80;
-            //msg.text = "testing.";
-            //msg.text = "'''+response+'''";
-            //window.speechSynthesis.speak(msg);
-            //window.speechSynthesis.speak('Hello, I'm talking.');
-        </script>
-        <head>
+        <html>
+<head>
         <title>Marie's chatbot</title>
         </head>
         <body style="background-color:#000000;">
-        <form action="/bot" method="post">
-        <input name="say" type="text" autofocus  autocomplete="off" style="
+        <form action="/bot" method="post" id="masterform">
+        <input name="say" type="text" id="inputbox" autofocus  autocomplete="off" style="
             color:white;
             background-color:#000000;
             height: 100%;
@@ -90,6 +88,15 @@ def do_bot():
             font-size: 500%;
             ">
         </form>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+
+    <script>
+$("#masterform").submit(function(e) {
+  $("#inputbox").fadeOut("fast");
+});
+</script>
+</body>
+</html>
         
     '''
     
