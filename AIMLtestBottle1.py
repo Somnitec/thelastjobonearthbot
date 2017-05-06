@@ -4,14 +4,17 @@ import os
 
 from bottle import route, request, run
 
-kernel = aiml.Kernel()
+import win32com.client as wincl
+speak = wincl.Dispatch("SAPI.SpVoice")
+
+botbrain = aiml.Kernel()
 
 if os.path.isfile("bot_brain.brn"):
-    kernel.bootstrap(brainFile = "bot_brain.brn")
+    botbrain.bootstrap(brainFile = "bot_brain.brn")
 else:
-    #kernel.bootstrap(learnFiles = "aiml/startup.xml", commands = "load aiml b")
-    kernel.bootstrap(learnFiles = "aiml/std-startup.xml", commands = "load aiml b")
-    kernel.saveBrain("bot_brain.brn")
+    #botbrain.bootstrap(learnFiles = "aiml/startup.xml", commands = "load aiml b")
+    botbrain.bootstrap(learnFiles = "aiml/std-startup.xml", commands = "load aiml b")
+    botbrain.saveBrain("bot_brain.brn")
 
 def replaceChar(string):
     stringList = list(string)
@@ -56,17 +59,18 @@ def do_bot():
     
     say = request.forms.get('say')
     print("input:    "+ say )
-    response = kernel.respond(say)
+    response = botbrain.respond(say)
+    speak.Speak(response)
     print("response: " + response ) 
-    response = replaceChar(response) #without this, sentances with " will not be said for some reason
+    #response = replaceChar(response) #without this, sentances with " will not be said for some reason
   
     return '''
         <script>
-            var msg = new SpeechSynthesisUtterance();
-            msg.rate = 0.80;
+            //var msg = new SpeechSynthesisUtterance();
+            //msg.rate = 0.80;
             //msg.text = "testing.";
-            msg.text = "'''+response+'''";
-            window.speechSynthesis.speak(msg);
+            //msg.text = "'''+response+'''";
+            //window.speechSynthesis.speak(msg);
             //window.speechSynthesis.speak('Hello, I'm talking.');
         </script>
         <head>
