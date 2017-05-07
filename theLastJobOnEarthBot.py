@@ -31,7 +31,7 @@ def login():
 <head>
     <title>Marie's chatbot</title>
 </head>
-<body style="background-color:#000000;">
+<body style="background-color:#000000;overflow:hidden;">
     <form action="/bot" method="post" id="masterform">
         <input name="say" type="text" id="inputbox" autofocus autocomplete="off" placeholder="write to the bot here" style="
             color:white;
@@ -74,7 +74,7 @@ def do_bot():
 <head>
         <title>Marie's chatbot</title>
         </head>
-        <body style="background-color:#000000;">
+        <body style="background-color:#000000;overflow:hidden;">
         <form action="/bot" method="post" id="masterform">
         <input name="say" type="text" id="inputbox" autofocus  autocomplete="off" style="
             color:white;
