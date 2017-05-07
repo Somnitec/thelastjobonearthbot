@@ -41,8 +41,9 @@ def startpage():
         <input name="say" type="text" id="inputbox" autofocus autocomplete="off" placeholder="write to the bot here" style="
             color:white;
             background-color:#000000;
-            height: 100%;
-            width: 100%;
+            padding-left:5%;
+            height: 95%;
+            width: 95%;
             position:absolute;
             border: none;
             border-color: transparent;
@@ -78,7 +79,7 @@ def do_bot():
   
     return '''
         <html>
-<head>
+        <head>
         <title>Marie's chatbot</title>
         </head>
         <body style="background-color:#000000;overflow:hidden;">
@@ -86,8 +87,9 @@ def do_bot():
         <input name="say" type="text" id="inputbox" autofocus  autocomplete="off" style="
             color:white;
             background-color:#000000;
-            height: 100%;
-            width: 100%;
+            padding-left:5%;
+            height: 95%;
+            width: 95%;
             position:absolute;
             border: none;
             border-color: transparent;
