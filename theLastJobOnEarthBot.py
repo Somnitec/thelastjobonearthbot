@@ -1,11 +1,20 @@
+textFadeOutTime = 1000 #in milliseconds
+
+import thread
+
 import aiml
 import os
 
 
 from bottle import route, request, run
 
-import win32com.client as wincl
-speak = wincl.Dispatch("SAPI.SpVoice")
+from time import sleep
+
+import sys
+sys.coinit_flags = 0
+import pythoncom
+import win32com.client
+speak = win32com.client.Dispatch("SAPI.SpVoice")
 
 botbrain = aiml.Kernel()
 
@@ -16,16 +25,12 @@ else:
     botbrain.bootstrap(learnFiles = "aiml/std-startup.xml", commands = "load aiml b")
     botbrain.saveBrain("bot_brain.brn")
 
-def replaceChar(string):
-    stringList = list(string)
-    for i, c in enumerate(stringList):
-        if stringList[i]=='"':
-            stringList[i]= ''
-    result = ''.join(stringList)
-    return result
+def sayThis(text):
+    speak.Speak(text)
+    #print("\n"+text+" is said\n")
 
 @route('/bot')
-def login():
+def startpage():
     return '''
 <html>
 <head>
@@ -51,7 +56,7 @@ def login():
     <script>
     
 $("#masterform").submit(function(e) {
-  $("#inputbox").fadeOut("fast");
+  $("#inputbox").fadeOut('''+str(textFadeOutTime)+''');
 });
 </script>
 
@@ -65,9 +70,11 @@ def do_bot():
     say = request.forms.get('say')
     print("input:    "+ say )
     response = botbrain.respond(say)
-    speak.Speak(response)
+    #speak.Speak(response)
+    thread.start_new_thread(sayThis,(response,))
+    sleep(textFadeOutTime/1000.)
+    
     print("response: " + response ) 
-    #response = replaceChar(response) #without this, sentances with " will not be said for some reason
   
     return '''
         <html>
@@ -92,7 +99,7 @@ def do_bot():
 
     <script>
 $("#masterform").submit(function(e) {
-  $("#inputbox").fadeOut("fast");
+  $("#inputbox").fadeOut('''+str(textFadeOutTime)+''');
 });
 </script>
 </body>
