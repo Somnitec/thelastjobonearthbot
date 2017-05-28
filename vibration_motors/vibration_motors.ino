@@ -1,6 +1,7 @@
 int motors[] = {10, 11};
 
-int states[] = {100, 300,700,1500};
+int states[] = {100, 300, 700, 1500};
+int odddivision[] = {10, 50, 90};
 
 int waitTime = 3000;
 
@@ -11,29 +12,34 @@ void setup() {
   pinMode(motors[0], OUTPUT);
   pinMode(motors[1], OUTPUT);
   Serial.begin(9600);
-   while (!Serial) {
+  while (!Serial) {
     ; // wait for serial port to connect. Needed for native USB port only
   }
   inputString.reserve(200);
 }
 
 void loop() {
-  if(Serial.available() > 0)  serialEvent();
-  
+  if (Serial.available() > 0)  serialEvent();
+
   if (stringComplete) {
     Serial.println(inputString);
     // clear the string:
     inputString = "";
     stringComplete = false;
-      vibrate(0, random(4));
-  delay(waitTime);
-  vibrate(1, random(4));
+    vibrate(0, random(100));
+    delay(waitTime);
+    vibrate(1, random(100));
   }
 }
 
 void vibrate(int motor, int state) {
+  Serial.print("odds =");
+  Serial.println(state);
+  if (state < odddivision[0])state = 0;
+  else if (state < odddivision[1])state = 1;
+  else if (state < odddivision[2])state = 2;
+  else state = 3;
   Serial.print("state =");
-
   Serial.println(state);
   digitalWrite(motors[motor], HIGH);
   delay(states[state]);
@@ -50,7 +56,7 @@ void vibrate(int motor, int state) {
 }
 
 void serialEvent() {
-while (Serial.available()) {
+  while (Serial.available()) {
     // get the new byte:
     char inChar = (char)Serial.read();
     // add it to the inputString:
