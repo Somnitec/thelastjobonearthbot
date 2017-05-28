@@ -3,7 +3,7 @@ int motors[] = {10, 11};
 int states[] = {100, 300, 700, 1500};
 int odddivision[] = {10, 50, 90};
 
-int waitTime = 3000;
+int waitTime = 1000;
 
 String inputString = "";         // a string to hold incoming data
 boolean stringComplete = false;

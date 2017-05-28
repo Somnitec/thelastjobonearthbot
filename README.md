@@ -10,5 +10,9 @@ pip install aiml, pypiwin32, bottle, pyserial
 
 
 To Do:
-Speech to text
 edit properties of the bot
+
+Instructions:
+Connect arduino 
+ - check on which port it is and change this in the python code
+go to "http://localhost:8080/bot" and make it work
