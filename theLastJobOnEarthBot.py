@@ -5,6 +5,9 @@ import thread
 import aiml
 import os
 
+import serial
+
+ser = serial.Serial('COM1', 9600)
 
 from bottle import route, request, run
 
@@ -67,7 +70,7 @@ $("#masterform").submit(function(e) {
 
 @route('/bot', method='POST')
 def do_bot():
-    
+    ser.write("!")#make it vibrate 
     say = request.forms.get('say')
     print("input:    "+ say )
     response = botbrain.respond(say)
