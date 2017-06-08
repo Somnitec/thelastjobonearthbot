@@ -7,8 +7,6 @@
 #define FRAMES_PER_SECOND 60
 CRGB leds[NUM_LEDS];
 
-CRGB whiteColor= CRGB(120,200, 255);
-
 int fonkeler = 0;
 int delay1 = 30;
 int delay2 = 15;
@@ -23,7 +21,7 @@ long timer2 = 0;
 
 void setup() {
   Serial.begin(9600);
-  FastLED.addLeds<CHIPSET, LED_PIN, COLOR_ORDER>(leds, NUM_LEDS);//.setCorrection( CarbonArc  );
+  FastLED.addLeds<CHIPSET, LED_PIN, COLOR_ORDER>(leds, NUM_LEDS).setCorrection( CarbonArc  );
   FastLED.setBrightness( BRIGHTNESS );
 
 }
@@ -58,7 +56,7 @@ void loop() {
 
 void juston() {
   for (int i = 0; i < NUM_LEDS; i++) {
-    leds[i] = CRGB::White;//whiteColor;
+    leds[i] = CHSV(200, 0, 255);
   }
   delay(100);
 }
@@ -68,7 +66,7 @@ void swirling() {
   for (int i = 0; i < NUM_LEDS; i++) {
     int j = 1;//for (int j = 0; j < 9; j++) {
     if (i ==  pos1 % NUM_LEDS) {
-      leds[i] =  CRGB::White;//whiteColor;
+      leds[i] = CRGB::White;
 
     }
     if (i ==  pos2 % NUM_LEDS) {
