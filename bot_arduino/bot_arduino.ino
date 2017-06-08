@@ -1,15 +1,22 @@
-#include <Adafruit_NeoPixel.h>
+#include "FastLED.h"
 
 ///settings
 
-int waitTime = 1000;//in between the two vibrations
+#define BRIGHTNESS      255
+#define  waitTime       1000//in between the two vibrations
+#define  ledRefreshrate 100//in Hz
 
 ///
 
-#define NUM_LEDS 60
-#define LED_PIN 6
-  Adafruit_NeoPixel strip = Adafruit_NeoPixel(60, LED_PIN, NEO_GRB + NEO_KHZ800);
+#define DATA_PIN    6
+#define LED_TYPE    WS2812B
+#define COLOR_ORDER GRB
+#define NUM_LEDS    60
+CRGB leds[NUM_LEDS];
 
+long ledTimer = 0;
+int ledState = 0;//0 is waiting, 1 is loading
+int ledPos = 0;
 
 int motors[] = {10, 11};
 
@@ -22,8 +29,10 @@ boolean stringComplete = false;
 
 void setup() {
 
-  strip.begin();
-  strip.show(); 
+  FastLED.addLeds<LED_TYPE, DATA_PIN, COLOR_ORDER>(leds, NUM_LEDS).setCorrection(TypicalLEDStrip);
+
+  FastLED.setBrightness(BRIGHTNESS);
+
   pinMode(motors[0], OUTPUT);
   pinMode(motors[1], OUTPUT);
   Serial.begin(9600);
@@ -32,7 +41,7 @@ void setup() {
   }
   inputString.reserve(200);
   lampWaiting();
-  
+
 }
 
 void loop() {
@@ -54,20 +63,37 @@ void loop() {
 }
 
 void lampWaiting() {
-  for (int i = 0; i < strip.numPixels(); i++) {
-    strip.setPixelColor(i, strip.Color(120,200,255));
-  }
-  strip.show();
+  ledState = 0;
+
 }
 
 void lampLoading() {
-  for (int i = 0; i < strip.numPixels(); i++) {
-    strip.setPixelColor(i, strip.Color(0,255,0));
-  }
-  strip.show();
+  ledState = 1;
 }
 
 void lampStuff() {
+  
+  unsigned long currentMillis = millis();
+  if (currentMillis - ledTimer > 100) {
+    ledTimer = currentMillis;
+    if (ledState == 0) {
+      for (int i = 0; i < NUM_LEDS; i++) {
+        leds[i] += CRGB::White;
+      }
+     Serial.println("waiting");
+    }
+    else if (ledState == 1) {
+
+      for (int i = 0; i < NUM_LEDS; i++) {
+        if (i == ledPos % NUM_LEDS)leds[i] += CRGB::White;
+        else leds[i].fadeToBlackBy( 1 );
+      }
+      ledPos++;
+      Serial.println("loading");
+    }
+    FastLED.show();
+  }
+
 
 }
 
