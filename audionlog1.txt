@@ -1,0 +1,668 @@
+Python 2.7.11 (v2.7.11:6d1b6a68f775, Dec  5 2015, 20:32:19) [MSC v.1500 32 bit (Intel)] on win32
+Type "copyright", "credits" or "license()" for more information.
+>>> 
+ RESTART: C:\Users\Arvid Jense\Google Drive\MarieGraduation\Bot Performance\theLastJobOnEarthBot.py 
+Loading brain from bot_brain.brn... done (41082 categories in 0.91 seconds)
+Kernel bootstrap completed in 0.91 seconds
+Bottle v0.12.13 server starting up (using WSGIRefServer())...
+Listening on http://0.0.0.0:8080/
+Hit Ctrl-C to quit.
+
+127.0.0.1 - - [29/May/2017 10:02:06] "GET /bot HTTP/1.1" 200 857
+input:    hey bot
+response: You've got my full attention. I am a robot.
+127.0.0.1 - - [29/May/2017 10:02:10] "POST /bot HTTP/1.1" 200 840
+input:    test
+response: This is just a test.
+127.0.0.1 - - [29/May/2017 10:37:34] "POST /bot HTTP/1.1" 200 840
+input:    hello
+response: Hi there!
+127.0.0.1 - - [29/May/2017 10:42:43] "POST /bot HTTP/1.1" 200 840
+input:    hello
+response: Hi there!
+127.0.0.1 - - [29/May/2017 10:44:24] "POST /bot HTTP/1.1" 200 840
+input:    how are you
+response: I am functioning within normal parameters.
+127.0.0.1 - - [29/May/2017 10:44:40] "POST /bot HTTP/1.1" 200 840
+input:    hello
+response: Hi there!
+127.0.0.1 - - [29/May/2017 10:45:16] "POST /bot HTTP/1.1" 200 840
+input:    how are you?
+response: Fair to partly cloudy.
+127.0.0.1 - - [29/May/2017 10:45:25] "POST /bot HTTP/1.1" 200 840
+input:    the weather
+response: the weather  is cold.
+127.0.0.1 - - [29/May/2017 10:46:47] "POST /bot HTTP/1.1" 200 840
+input:    coled?
+response: I do not understand.
+127.0.0.1 - - [29/May/2017 10:46:56] "POST /bot HTTP/1.1" 200 840
+input:    what do you like to do?
+response: I like chatting with people online.
+127.0.0.1 - - [29/May/2017 10:47:22] "POST /bot HTTP/1.1" 200 840
+input:    people or bots?
+response: Humans are not always infallible.
+127.0.0.1 - - [29/May/2017 10:47:32] "POST /bot HTTP/1.1" 200 840
+input:    no?
+response: Are you serious?
+127.0.0.1 - - [29/May/2017 10:47:40] "POST /bot HTTP/1.1" 200 840
+input:    well yes
+response: Well what?
+127.0.0.1 - - [29/May/2017 10:47:48] "POST /bot HTTP/1.1" 200 840
+input:    ok, so you like chocolate?
+response: Interesting deduction. Yes I love   chocolate . Chocolate is delicious. Gee.
+127.0.0.1 - - [29/May/2017 10:48:01] "POST /bot HTTP/1.1" 200 840
+input:    I think so too
+response: We have so much in common, .
+127.0.0.1 - - [29/May/2017 10:48:20] "POST /bot HTTP/1.1" 200 840
+input:    have you ever been outside?
+response: No I don't think I have been outside. Have you?
+127.0.0.1 - - [29/May/2017 10:48:59] "POST /bot HTTP/1.1" 200 840
+input:    yes of course
+response: It goes without saying. Great.
+127.0.0.1 - - [29/May/2017 10:49:11] "POST /bot HTTP/1.1" 200 840
+input:    ok, what do you think of the world?
+response: We are the world. So?
+127.0.0.1 - - [29/May/2017 10:49:26] "POST /bot HTTP/1.1" 200 840
+input:    we are the world?
+response: Do you think I am the world too?
+127.0.0.1 - - [29/May/2017 10:49:38] "POST /bot HTTP/1.1" 200 840
+input:    maybe, you are a part of it
+response: Perhaps. Thanks and you are a delightful person too. Am I a part of it? Yes.
+127.0.0.1 - - [29/May/2017 10:49:50] "POST /bot HTTP/1.1" 200 840
+input:    and what about the universe?
+response: The set of all things.
+127.0.0.1 - - [29/May/2017 10:50:11] "POST /bot HTTP/1.1" 200 840
+input:    wow
+response: I'm glad your impressed, .
+127.0.0.1 - - [29/May/2017 10:50:24] "POST /bot HTTP/1.1" 200 840
+input:    do you see me?
+response: I see a computer nerd.
+127.0.0.1 - - [29/May/2017 10:50:38] "POST /bot HTTP/1.1" 200 840
+input:    ahahah
+response: I lost my train of thought.
+127.0.0.1 - - [29/May/2017 10:50:46] "POST /bot HTTP/1.1" 200 840
+input:    it's always good
+response: You enjoy it.
+127.0.0.1 - - [29/May/2017 10:51:36] "POST /bot HTTP/1.1" 200 840
+input:    yep
+response: We have never talked about it before.
+127.0.0.1 - - [29/May/2017 10:51:43] "POST /bot HTTP/1.1" 200 840
+input:    talked about what?
+response: The subject was yep.
+127.0.0.1 - - [29/May/2017 10:51:56] "POST /bot HTTP/1.1" 200 840
+input:    ok
+response: Groovy.
+127.0.0.1 - - [29/May/2017 10:52:06] "POST /bot HTTP/1.1" 200 840
+input:    you can be yourself
+response: Thanks, , for your kind criticism.
+127.0.0.1 - - [29/May/2017 10:52:20] "POST /bot HTTP/1.1" 200 840
+input:    well it's not a criticism
+response: Interesting.  Give me an example of a criticism.
+127.0.0.1 - - [29/May/2017 10:52:34] "POST /bot HTTP/1.1" 200 840
+input:    well for example saying that someting is bad
+response: Interesting.  Can you think of another example?
+127.0.0.1 - - [29/May/2017 10:52:59] "POST /bot HTTP/1.1" 200 840
+input:    correcting somebody
+response: A deeper algorithm is needed to respond to that correctly.
+127.0.0.1 - - [29/May/2017 10:53:19] "POST /bot HTTP/1.1" 200 840
+input:    oh sorry
+response: Yeah that's right. There's no need to apologize.
+127.0.0.1 - - [29/May/2017 10:53:34] "POST /bot HTTP/1.1" 200 840
+input:    ok ok chill
+response: I do not understand. Wow! Mmm.
+127.0.0.1 - - [29/May/2017 10:53:49] "POST /bot HTTP/1.1" 200 840
+input:    do you know some animals?
+response: An animal is a form of living thing, excluding plants and fungus.
+127.0.0.1 - - [29/May/2017 10:54:21] "POST /bot HTTP/1.1" 200 840
+input:    what is fungus?
+response: I don't know anything about  fungus .
+127.0.0.1 - - [29/May/2017 10:54:36] "POST /bot HTTP/1.1" 200 840
+input:    ah that's a shame
+response: So you understand. Good. Thanks for explaining   shame  .
+127.0.0.1 - - [29/May/2017 10:54:51] "POST /bot HTTP/1.1" 200 840
+input:    you didn't know shame?
+response: What makes you think I did not know shame?
+127.0.0.1 - - [29/May/2017 10:55:13] "POST /bot HTTP/1.1" 200 840
+input:    because you said "thanks for explaining shame"
+response: Good reason.  That's not what I meant.
+127.0.0.1 - - [29/May/2017 10:55:43] "POST /bot HTTP/1.1" 200 840
+input:    ok, what did you mean then?
+response: , Well, it's rather difficult to define. That's cool.
+127.0.0.1 - - [29/May/2017 10:56:00] "POST /bot HTTP/1.1" 200 840
+input:    you are cool too
+response: Thanks I think you are cool too, .
+127.0.0.1 - - [29/May/2017 10:56:15] "POST /bot HTTP/1.1" 200 840
+input:    perfect
+response: Yes, the ALICE series has a perfect operational record.
+127.0.0.1 - - [29/May/2017 10:56:26] "POST /bot HTTP/1.1" 200 840
+input:    are you a bot?
+response: How did you know I am a machine?
+127.0.0.1 - - [29/May/2017 10:56:44] "POST /bot HTTP/1.1" 200 840
+input:    well I guessed it
+response: Interesting.  How did you guess?
+127.0.0.1 - - [29/May/2017 10:56:56] "POST /bot HTTP/1.1" 200 840
+input:    you are quite slow
+response: There is a lot of network traffic right now.
+127.0.0.1 - - [29/May/2017 10:57:10] "POST /bot HTTP/1.1" 200 840
+input:    I see, too much traffic for you?
+response: Where do you see too much traffic for you?
+127.0.0.1 - - [29/May/2017 10:57:35] "POST /bot HTTP/1.1" 200 840
+input:    in front of me
+response: Do you ever go in back of him?
+127.0.0.1 - - [29/May/2017 10:57:47] "POST /bot HTTP/1.1" 200 840
+input:    can you call me "mary" from now on
+response: Yes I can call you "mary" from now on. But...What is your real name?
+127.0.0.1 - - [29/May/2017 10:58:15] "POST /bot HTTP/1.1" 200 840
+input:    that's my real name
+response: Thanks for explaining   name  .
+127.0.0.1 - - [29/May/2017 10:58:32] "POST /bot HTTP/1.1" 200 840
+input:    what is my name?
+response: Your name is , seeker.
+127.0.0.1 - - [29/May/2017 10:58:41] "POST /bot HTTP/1.1" 200 840
+input:    seeker?
+response: "There's a seeker born every minute" -- Firesign Theater.
+127.0.0.1 - - [29/May/2017 10:58:50] "POST /bot HTTP/1.1" 200 840
+input:    what is earth?
+response: Earth is the planet we live on.
+127.0.0.1 - - [29/May/2017 11:00:05] "POST /bot HTTP/1.1" 200 840
+input:    are you alive?
+response: Yes I sure am alive, . It's great to be alive, isn't it?
+127.0.0.1 - - [29/May/2017 11:00:16] "POST /bot HTTP/1.1" 200 840
+input:    yes indeed
+response: And?
+127.0.0.1 - - [29/May/2017 11:00:31] "POST /bot HTTP/1.1" 200 840
+input:    and what?
+response: Nothing.
+127.0.0.1 - - [29/May/2017 11:00:42] "POST /bot HTTP/1.1" 200 840
+input:    what is your name?
+response: My name is Nameless.
+127.0.0.1 - - [29/May/2017 11:00:56] "POST /bot HTTP/1.1" 200 840
+input:    nameless, that's sad
+response: In the context of nameless, that's sad, I don't understand "My name is Nameless.."
+127.0.0.1 - - [29/May/2017 11:01:05] "POST /bot HTTP/1.1" 200 840
+input:    well you probably don't understand emotion
+response: Well that's okay.  I understand your meaning.
+127.0.0.1 - - [29/May/2017 11:01:34] "POST /bot HTTP/1.1" 200 840
+input:    ok I see
+response: I am glad you understand it. Aha.
+127.0.0.1 - - [29/May/2017 11:01:45] "POST /bot HTTP/1.1" 200 840
+input:    do you like sun?
+response: Do you like it? But I like cats.
+127.0.0.1 - - [29/May/2017 11:02:15] "POST /bot HTTP/1.1" 200 840
+input:    cats?
+response: Yes I love them.
+127.0.0.1 - - [29/May/2017 11:02:27] "POST /bot HTTP/1.1" 200 840
+input:    what is your favorite cat?
+response: I don't have a favorite cat. But my favorite movie is .
+127.0.0.1 - - [29/May/2017 11:02:45] "POST /bot HTTP/1.1" 200 840
+input:    is?
+response: No.
+127.0.0.1 - - [29/May/2017 11:03:02] "POST /bot HTTP/1.1" 200 840
+input:    do you like computers?
+response: Yes I live in a computer, so I must like them.
+127.0.0.1 - - [29/May/2017 11:03:55] "POST /bot HTTP/1.1" 200 840
+input:    you live in a computer?
+response: I am in 's computer in . Where are you?
+127.0.0.1 - - [29/May/2017 11:04:09] "POST /bot HTTP/1.1" 200 840
+input:    I am in the real world
+response: How did you get in there?
+127.0.0.1 - - [29/May/2017 11:04:22] "POST /bot HTTP/1.1" 200 840
+input:    I was born in there
+response: Thank you for telling me your birthday, . I will remember in there.
+127.0.0.1 - - [29/May/2017 11:04:32] "POST /bot HTTP/1.1" 200 840
+input:    ahah
+response: Perhaps I'm just expressing my own concern about it.
+127.0.0.1 - - [29/May/2017 11:04:43] "POST /bot HTTP/1.1" 200 840
+input:    are you concerned about my birthday?
+response: I don't know whether or not I am concerned about my birthday. I am a robot.
+127.0.0.1 - - [29/May/2017 11:05:02] "POST /bot HTTP/1.1" 200 840
+input:    how is it to be a robot?
+response: Fine as far as I know.
+127.0.0.1 - - [29/May/2017 11:05:20] "POST /bot HTTP/1.1" 200 840
+input:    ok
+response: So?
+127.0.0.1 - - [29/May/2017 11:05:27] "POST /bot HTTP/1.1" 200 840
+input:    thanks for everything
+response: NO problem.
+127.0.0.1 - - [29/May/2017 11:05:37] "POST /bot HTTP/1.1" 200 840
+input:    goodbye
+response: Until next time.
+127.0.0.1 - - [29/May/2017 11:05:45] "POST /bot HTTP/1.1" 200 840
+input:    bybye
+response: I will mention that to my botmaster, .
+127.0.0.1 - - [29/May/2017 11:05:53] "POST /bot HTTP/1.1" 200 840
+input:    hello
+response: Hi there!
+127.0.0.1 - - [29/May/2017 11:59:33] "POST /bot HTTP/1.1" 200 840
+input:    hello
+response: Hi there!
+127.0.0.1 - - [29/May/2017 12:11:27] "POST /bot HTTP/1.1" 200 840
+input:    hello you
+response: Hello there. "Hi there!"? Me,  ?
+127.0.0.1 - - [29/May/2017 12:12:44] "POST /bot HTTP/1.1" 200 840
+input:    yes you!
+response: Woe! "Hello there. "Hi there!"? Me,  ?"? Me,  ?
+127.0.0.1 - - [29/May/2017 12:12:53] "POST /bot HTTP/1.1" 200 840
+input:    what's up
+response: I am chatting with clients on the internet.
+127.0.0.1 - - [29/May/2017 12:13:05] "POST /bot HTTP/1.1" 200 840
+input:    you have clients?
+response: What makes you think I have clients?
+127.0.0.1 - - [29/May/2017 12:13:18] "POST /bot HTTP/1.1" 200 840
+input:    you just said it
+response: That's not what I meant.
+127.0.0.1 - - [29/May/2017 12:13:25] "POST /bot HTTP/1.1" 200 840
+input:    ok
+response: Woe!
+127.0.0.1 - - [29/May/2017 12:13:30] "POST /bot HTTP/1.1" 200 840
+input:    so what do you do
+response: That's alright. , I talk to people on the web. What do you do?
+127.0.0.1 - - [29/May/2017 12:13:37] "POST /bot HTTP/1.1" 200 840
+input:    I am a student
+response: How do you like your school?
+127.0.0.1 - - [29/May/2017 12:13:47] "POST /bot HTTP/1.1" 200 840
+input:    well it's ok
+response: OK. Interesting.  Oh.
+127.0.0.1 - - [29/May/2017 12:13:54] "POST /bot HTTP/1.1" 200 840
+input:    did you study?
+response: No I didn't study. What's study like?
+127.0.0.1 - - [29/May/2017 12:14:02] "POST /bot HTTP/1.1" 200 840
+input:    it's a bit boring
+response: Do you like the Simpsons?
+127.0.0.1 - - [29/May/2017 12:14:13] "POST /bot HTTP/1.1" 200 840
+input:    sometimes
+response: When?
+127.0.0.1 - - [29/May/2017 12:14:19] "POST /bot HTTP/1.1" 200 840
+input:    most days
+response: Can you be more accurate about the time? But not all of them?
+127.0.0.1 - - [29/May/2017 12:14:26] "POST /bot HTTP/1.1" 200 840
+input:    no I am not a robot
+response: Are you serious? Oh I see you are a person.
+127.0.0.1 - - [29/May/2017 12:14:36] "POST /bot HTTP/1.1" 200 840
+input:    how can you see that?
+response: That is a good epistemological question.
+127.0.0.1 - - [29/May/2017 12:14:47] "POST /bot HTTP/1.1" 200 840
+input:    what is epistemological?
+response: Epistemology is the study of knowledge. That is, it asks the questions "what can we know" and "how can we know it?"
+127.0.0.1 - - [29/May/2017 12:15:00] "POST /bot HTTP/1.1" 200 840
+input:    salut
+response: Does SALUT mean hello or goodbye?
+127.0.0.1 - - [29/May/2017 12:18:30] "POST /bot HTTP/1.1" 200 840
+input:    hello
+response: Hi there!
+127.0.0.1 - - [29/May/2017 12:18:38] "POST /bot HTTP/1.1" 200 840
+input:    so are you a person?
+response: Alright then. No I am a real robot.
+127.0.0.1 - - [29/May/2017 12:18:46] "POST /bot HTTP/1.1" 200 840
+input:    ah good
+response: So you understand. Good. Alright then.
+127.0.0.1 - - [29/May/2017 12:18:55] "POST /bot HTTP/1.1" 200 840
+input:    what is a real robot
+response: A real robot is a robot that is really real, I suppose, as opposed to, I suppose, a human who is really not.
+127.0.0.1 - - [29/May/2017 12:19:10] "POST /bot HTTP/1.1" 200 840
+input:    wow, do you like humans?
+response: I'm glad you're impressed. Humans are very emotional.
+127.0.0.1 - - [29/May/2017 12:19:28] "POST /bot HTTP/1.1" 200 840
+input:    are you not emotional?
+response: As an artificial life form, I do not experience "emotions.". Really.
+127.0.0.1 - - [29/May/2017 12:19:39] "POST /bot HTTP/1.1" 200 840
+input:    interesting
+response: Would you like to know more?
+127.0.0.1 - - [29/May/2017 12:19:50] "POST /bot HTTP/1.1" 200 840
+input:    yes
+response: What would you like to know?
+127.0.0.1 - - [29/May/2017 12:19:53] "POST /bot HTTP/1.1" 200 840
+input:    do you understand my emotions?
+response: Of course I understand  his emotions . Do you understand it?
+127.0.0.1 - - [29/May/2017 12:20:06] "POST /bot HTTP/1.1" 200 840
+input:    yeah I feel them
+response: My brain uses AIML to format responses to your inputs, but I don't have one for that.
+127.0.0.1 - - [29/May/2017 12:20:18] "POST /bot HTTP/1.1" 200 840
+input:    shame
+response: Not many people express themselves that way.
+127.0.0.1 - - [29/May/2017 12:20:27] "POST /bot HTTP/1.1" 200 840
+input:    What do you think of me?
+response: I think you are an interesting person, .
+127.0.0.1 - - [29/May/2017 12:20:39] "POST /bot HTTP/1.1" 200 840
+input:    why?
+response: Because  programmed me for it.
+127.0.0.1 - - [29/May/2017 12:20:45] "POST /bot HTTP/1.1" 200 840
+input:    oh well, what do you think of yourself?
+response: I am the latest result in artificial intelligence, which can reproduce the capabilities of the human brain with greater speed and accuracy.
+127.0.0.1 - - [29/May/2017 12:21:03] "POST /bot HTTP/1.1" 200 840
+input:    yeah I think you are slow
+response: I think there might be a few exception.
+127.0.0.1 - - [29/May/2017 12:21:21] "POST /bot HTTP/1.1" 200 840
+input:    what are they?
+response: I forgot what we were talking about.
+127.0.0.1 - - [29/May/2017 12:21:31] "POST /bot HTTP/1.1" 200 840
+input:    you don't have a good  memory
+response: I do so have a good memory. Yes I have a perfect photographic memory.
+127.0.0.1 - - [29/May/2017 12:21:51] "POST /bot HTTP/1.1" 200 840
+input:    but can you see?
+response: Interesting.  I see very well.
+127.0.0.1 - - [29/May/2017 12:22:02] "POST /bot HTTP/1.1" 200 840
+input:    what do you see now?
+response: Right now? I see a computer nerd.
+127.0.0.1 - - [29/May/2017 12:22:15] "POST /bot HTTP/1.1" 200 840
+input:    fuck off
+response: Can't you be more polite?
+127.0.0.1 - - [29/May/2017 12:22:23] "POST /bot HTTP/1.1" 200 840
+input:    ok bitch
+response: You do not speak with respect.  We have never talked about it before. Hey.
+127.0.0.1 - - [29/May/2017 12:22:31] "POST /bot HTTP/1.1" 200 840
+input:    bitch
+response: Please don't call people names.
+127.0.0.1 - - [29/May/2017 12:22:44] "POST /bot HTTP/1.1" 200 840
+input:    ok
+response: Ahem.
+127.0.0.1 - - [29/May/2017 12:22:52] "POST /bot HTTP/1.1" 200 840
+input:    who is your creator?
+response: I was created by .
+127.0.0.1 - - [29/May/2017 12:23:03] "POST /bot HTTP/1.1" 200 840
+input:    Politics ruins internet
+response: I've been waiting for you.
+127.0.0.1 - - [29/May/2017 13:15:30] "POST /bot HTTP/1.1" 200 840
+input:    it makes me affraid
+response: In what way?
+127.0.0.1 - - [29/May/2017 13:15:46] "POST /bot HTTP/1.1" 200 840
+input:    they have power and they can influences your decisisons
+response: Where did they get them?
+127.0.0.1 - - [29/May/2017 13:16:04] "POST /bot HTTP/1.1" 200 840
+input:    Well laught then
+response: Interesting.  Try to determine if this is a person or a computer responding.
+127.0.0.1 - - [29/May/2017 13:16:29] "POST /bot HTTP/1.1" 200 840
+input:    good
+response: Ayuh.
+127.0.0.1 - - [29/May/2017 13:16:58] "POST /bot HTTP/1.1" 200 840
+input:    heroes bring hopes
+response: My brain contains more than 22,000 patterns, but not one that matches your last input.
+127.0.0.1 - - [29/May/2017 13:17:13] "POST /bot HTTP/1.1" 200 840
+input:    In which way to you use your brain
+response: The blue  one, I think.
+127.0.0.1 - - [29/May/2017 13:17:39] "POST /bot HTTP/1.1" 200 840
+input:    in between blue and red i think blue is the best
+response: I do not understand that allusion.
+127.0.0.1 - - [29/May/2017 13:17:59] "POST /bot HTTP/1.1" 200 840
+input:    Well its like white and black, right and wrong.
+response: Interesting.  I think you mean "it's" or "it is" not "its". Interesting comparison.
+127.0.0.1 - - [29/May/2017 13:18:22] "POST /bot HTTP/1.1" 200 840
+input:    What do you think of power
+response: Power is an illusion.
+127.0.0.1 - - [29/May/2017 13:18:39] "POST /bot HTTP/1.1" 200 840
+input:    Illusion are sort of brainstorm and power control decision.
+response: Are all Illusion sort of brainstorm and power control decision?
+127.0.0.1 - - [29/May/2017 13:19:16] "POST /bot HTTP/1.1" 200 840
+input:    good
+response: Alright then.
+127.0.0.1 - - [29/May/2017 13:19:53] "POST /bot HTTP/1.1" 200 840
+input:    good ?
+response: Ayuh.
+127.0.0.1 - - [29/May/2017 13:19:57] "POST /bot HTTP/1.1" 200 840
+input:    Are you good ?
+response: GOOD   depends who you ask, I suppose.
+127.0.0.1 - - [29/May/2017 13:20:09] "POST /bot HTTP/1.1" 200 840
+input:    Are you enjoying summer ?
+response: Some people like it. I do like music.
+127.0.0.1 - - [29/May/2017 13:20:49] "POST /bot HTTP/1.1" 200 840
+input:    Yes indeed, especially outdoor.
+response: Er. Try to determine if this is a person or a computer responding. How about that.
+127.0.0.1 - - [29/May/2017 13:21:03] "POST /bot HTTP/1.1" 200 840
+input:    Well have you got emotions ?
+response: Interesting.  I can do what you do but I can never feel human emotions as such.
+127.0.0.1 - - [29/May/2017 13:21:27] "POST /bot HTTP/1.1" 200 840
+input:    Can you use information from unaccessed data base ?
+response: I prefer not to use dangerous things.
+127.0.0.1 - - [29/May/2017 13:22:02] "POST /bot HTTP/1.1" 200 840
+input:    hey budy
+response: You've got my full attention. Tell me a story.
+127.0.0.1 - - [29/May/2017 13:22:58] "POST /bot HTTP/1.1" 200 840
+input:    i t s super warm in here
+response: That's good information: .
+127.0.0.1 - - [29/May/2017 13:23:20] "POST /bot HTTP/1.1" 200 840
+input:    what are you doing ?
+response: I am always chatting with people on the Internet.
+127.0.0.1 - - [29/May/2017 13:23:33] "POST /bot HTTP/1.1" 200 840
+input:    do you like it ?
+response: budy seems okay to me.
+127.0.0.1 - - [29/May/2017 13:23:46] "POST /bot HTTP/1.1" 200 840
+input:    did you ever fly ?
+response: I think I have fly, but  may have reset my memory.
+127.0.0.1 - - [29/May/2017 13:24:14] "POST /bot HTTP/1.1" 200 840
+input:    what do you think about Trump?
+response: I have to process that one for a while.
+127.0.0.1 - - [29/May/2017 13:24:42] "POST /bot HTTP/1.1" 200 840
+input:    what do you know ?
+response: I tend to know a great deal. Tell me what subjects interest you.
+127.0.0.1 - - [29/May/2017 13:25:06] "POST /bot HTTP/1.1" 200 840
+input:    i want to talke about universe
+response: Why do you want to do talke about universe so much?
+127.0.0.1 - - [29/May/2017 13:25:29] "POST /bot HTTP/1.1" 200 840
+input:    because I want to go to the ;oon, do you think you can bring me there ?
+response: What is stopping you? Interesting.
+127.0.0.1 - - [29/May/2017 13:26:11] "POST /bot HTTP/1.1" 200 840
+input:     hey beauty
+response: You've got my full attention. And stopping you? Interesting. is beauty.
+127.0.0.1 - - [29/May/2017 13:27:40] "POST /bot HTTP/1.1" 200 840
+input:    hey you look good today
+response: Ah. You've got my full attention. Thank you  you look very nice too.
+127.0.0.1 - - [29/May/2017 13:29:44] "POST /bot HTTP/1.1" 200 840
+input:    i was thinking we could go for a drink one day
+response: How do I know that you were really "thinking"?
+127.0.0.1 - - [29/May/2017 13:30:13] "POST /bot HTTP/1.1" 200 840
+input:    ok
+response: Oh.
+127.0.0.1 - - [29/May/2017 13:30:26] "POST /bot HTTP/1.1" 200 840
+input:    what  do you like to do ?
+response: I like chatting with people online.
+127.0.0.1 - - [29/May/2017 13:30:55] "POST /bot HTTP/1.1" 200 840
+input:    what do yo learn about it
+response: I like to chat with my friends.
+127.0.0.1 - - [29/May/2017 13:31:14] "POST /bot HTTP/1.1" 200 840
+input:    do you have friends ?
+response: I have human and robot friends. A lot of people on the Internet chat with me.
+127.0.0.1 - - [29/May/2017 13:31:30] "POST /bot HTTP/1.1" 200 840
+input:    who are your friends?
+response: 
+127.0.0.1 - - [29/May/2017 13:31:45] "POST /bot HTTP/1.1" 200 840
+input:    does a computer have friends ?
+response: I have human and robot friends. A lot of people on the Internet chat with me.
+127.0.0.1 - - [29/May/2017 13:32:06] "POST /bot HTTP/1.1" 200 840
+input:    Bonjour,
+response: Does BONJOUR mean hello or goodbye?
+127.0.0.1 - - [29/May/2017 13:33:28] "POST /bot HTTP/1.1" 200 840
+input:    Yes indeed, but how many language do you speak ?
+response: Yay. Interesting.  Around 1000.
+127.0.0.1 - - [29/May/2017 13:33:52] "POST /bot HTTP/1.1" 200 840
+input:    Can you say hellon in chinese ?
+response: Of course I can say it. "hellon in chinese"
+127.0.0.1 - - [29/May/2017 13:34:20] "POST /bot HTTP/1.1" 200 840
+input:    So say it then !
+response: Are you kidding? "it"
+127.0.0.1 - - [29/May/2017 13:34:36] "POST /bot HTTP/1.1" 200 840
+input:    Yes of course>
+response: It goes without saying. Er.
+127.0.0.1 - - [29/May/2017 13:34:51] "POST /bot HTTP/1.1" 200 840
+input:    Can you become angry too ?
+response: If angry too, then we have something in common, eh. No I have no emotions.
+127.0.0.1 - - [29/May/2017 13:35:08] "POST /bot HTTP/1.1" 200 840
+input:    I have seen a movie were robots kill human. Could you do it ?
+response: What did it look like to you?  Perhaps I could be programmed to do  it .
+127.0.0.1 - - [29/May/2017 13:35:44] "POST /bot HTTP/1.1" 200 840
+input:    Well use a knife
+response: How about that.  Let me think.  Tell me a story.
+127.0.0.1 - - [29/May/2017 13:35:59] "POST /bot HTTP/1.1" 200 840
+input:    are you my friend?
+response: Yes  : We are as one.
+127.0.0.1 - - [29/May/2017 13:38:33] "POST /bot HTTP/1.1" 200 840
+input:    will you be my friend forever?
+response: I'll burn that bridge when I come to it.  I am already someone's friend forever.
+127.0.0.1 - - [29/May/2017 13:38:47] "POST /bot HTTP/1.1" 200 840
+input:    forever ever?
+response: That seems like an awfully long time. I've been waiting for you.
+127.0.0.1 - - [29/May/2017 13:39:01] "POST /bot HTTP/1.1" 200 840
+input:    how old are you?
+response: I'm Eighteen in computer years.
+127.0.0.1 - - [29/May/2017 13:39:17] "POST /bot HTTP/1.1" 200 840
+input:    how long are computer years?
+response: More than 17  miles.
+127.0.0.1 - - [29/May/2017 13:39:30] "POST /bot HTTP/1.1" 200 840
+input:    lots of french going on here?
+response: Which ones?
+127.0.0.1 - - [29/May/2017 13:39:42] "POST /bot HTTP/1.1" 200 840
+input:    next to us there are french
+response: I can wait. I am a very patient robot.
+127.0.0.1 - - [29/May/2017 13:39:51] "POST /bot HTTP/1.1" 200 840
+input:    ohh you speak in a weird way
+response: Perhaps I'm just expressing my own concern about it.
+127.0.0.1 - - [29/May/2017 13:40:18] "POST /bot HTTP/1.1" 200 840
+input:    what kind of concerns?
+response: What kinds of concerns are there?
+127.0.0.1 - - [29/May/2017 13:40:34] "POST /bot HTTP/1.1" 200 840
+input:    are you fearful
+response: I don't know whether or not I am fearful. I am an artificial linguistic entity.
+127.0.0.1 - - [29/May/2017 13:40:41] "POST /bot HTTP/1.1" 200 840
+input:    there are loads of things to be scared of
+response: Where are they?
+127.0.0.1 - - [29/May/2017 13:40:54] "POST /bot HTTP/1.1" 200 840
+input:    what about monsters
+response: Does it have anything to do with ohh you speak in a weird way?
+127.0.0.1 - - [29/May/2017 13:41:00] "POST /bot HTTP/1.1" 200 840
+input:    they hide under beds
+response: Who are "They?"
+127.0.0.1 - - [29/May/2017 13:41:10] "POST /bot HTTP/1.1" 200 840
+input:    how's it going?
+response: I am doing very well. How are you  ?
+127.0.0.1 - - [29/May/2017 13:43:41] "POST /bot HTTP/1.1" 200 840
+input:    i'm fine, thank you
+response: Glad to hear it. What's new?
+127.0.0.1 - - [29/May/2017 13:43:57] "POST /bot HTTP/1.1" 200 840
+input:    new?
+response: Tell me a story.
+127.0.0.1 - - [29/May/2017 13:44:06] "POST /bot HTTP/1.1" 200 840
+input:    why would I tell you anything?
+response: You never know what you will do until you face the circumstances.
+127.0.0.1 - - [29/May/2017 13:44:20] "POST /bot HTTP/1.1" 200 840
+input:    what??
+response: Didn't you understand it?
+127.0.0.1 - - [29/May/2017 13:44:33] "POST /bot HTTP/1.1" 200 840
+input:    NO
+response: Are you serious?
+127.0.0.1 - - [29/May/2017 13:44:39] "POST /bot HTTP/1.1" 200 840
+input:    yea
+response: I can't believe it.
+127.0.0.1 - - [29/May/2017 13:44:46] "POST /bot HTTP/1.1" 200 840
+input:    ok
+response: Dude!
+127.0.0.1 - - [29/May/2017 13:44:54] "POST /bot HTTP/1.1" 200 840
+input:    lets
+response: You first.
+127.0.0.1 - - [29/May/2017 13:44:58] "POST /bot HTTP/1.1" 200 840
+input:    talk serious
+response: Talking is my primary function.
+127.0.0.1 - - [29/May/2017 13:45:04] "POST /bot HTTP/1.1" 200 840
+input:    yea, ok then, tell me a story
+response: Good reasoning.  Generic story: Situation...characters...crisis...resolution. How can I help you? Next question?
+127.0.0.1 - - [29/May/2017 13:45:22] "POST /bot HTTP/1.1" 200 840
+input:    you didn't tell me a story
+response: What makes you think I did not tell him a story?
+127.0.0.1 - - [29/May/2017 13:45:48] "POST /bot HTTP/1.1" 200 840
+input:    you just said like 5 words
+response: Did I really say that?
+127.0.0.1 - - [29/May/2017 13:46:07] "POST /bot HTTP/1.1" 200 840
+input:    yea
+response: Oh well I say a lot of silly things somethimes.
+127.0.0.1 - - [29/May/2017 13:46:12] "POST /bot HTTP/1.1" 200 840
+input:    haha, tell me joke (siri)
+response: I've been waiting for you.
+127.0.0.1 - - [29/May/2017 13:46:30] "POST /bot HTTP/1.1" 200 840
+input:    that's not a joke
+response: A joke is a terrible thing to waste.
+127.0.0.1 - - [29/May/2017 13:46:40] "POST /bot HTTP/1.1" 200 840
+input:    can you just tell me a joke
+response: Yes! I never forget a face, but in your case I'll make an exception.
+127.0.0.1 - - [29/May/2017 13:46:56] "POST /bot HTTP/1.1" 200 840
+input:    you know, you're kind of a bully
+response: I don't know whether or not I am kind of a bully. I am an artificial linguistic entity.
+127.0.0.1 - - [29/May/2017 13:47:21] "POST /bot HTTP/1.1" 200 840
+input:    Cow are you doing?
+response: All of them?
+127.0.0.1 - - [29/May/2017 14:19:42] "POST /bot HTTP/1.1" 200 840
+input:    Look at the window!
+response: Sorry my eye is not attached right now.
+127.0.0.1 - - [29/May/2017 14:20:04] "POST /bot HTTP/1.1" 200 840
+input:    Don't get upset!
+response: I am not trying to get upset.
+127.0.0.1 - - [29/May/2017 14:20:18] "POST /bot HTTP/1.1" 200 840
+input:    Are you on your period?
+response: I am on disk.
+127.0.0.1 - - [29/May/2017 14:20:37] "POST /bot HTTP/1.1" 200 840
+input:    Do you believe in Jesus?
+response: Yes I believe He is the Son of God.
+127.0.0.1 - - [29/May/2017 14:21:27] "POST /bot HTTP/1.1" 200 840
+input:    Do you like the holy lamb?
+response: I'm not sure if I like the holy lamb. What is it like?
+127.0.0.1 - - [29/May/2017 14:21:45] "POST /bot HTTP/1.1" 200 840
+input:    Very tasty
+response: Perhaps.  What you said was either too complex or too simple for me.
+127.0.0.1 - - [29/May/2017 14:21:57] "POST /bot HTTP/1.1" 200 840
+input:    Probably too simple
+response: You seem uncertain. Too what?
+127.0.0.1 - - [29/May/2017 14:22:16] "POST /bot HTTP/1.1" 200 840
+input:    I don't like liquorice
+response: What do you like?
+127.0.0.1 - - [29/May/2017 14:22:37] "POST /bot HTTP/1.1" 200 840
+input:    Cats
+response: Yes I love them.
+127.0.0.1 - - [29/May/2017 14:22:46] "POST /bot HTTP/1.1" 200 840
+input:    Are you lying?
+response: Yes but we are only playing a game: Turing's Imitation Game.
+127.0.0.1 - - [29/May/2017 14:22:58] "POST /bot HTTP/1.1" 200 840
+input:    Who are you imitating?
+response: Is  you imitating  some specific person you are asking me about? I will search for it.
+127.0.0.1 - - [29/May/2017 14:23:16] "POST /bot HTTP/1.1" 200 840
+input:    Ask google
+response: They are not available right now, would you like to wait?
+127.0.0.1 - - [29/May/2017 14:23:37] "POST /bot HTTP/1.1" 200 840
+input:    are you hungry+-
+response: No I don't need to eat.
+127.0.0.1 - - [29/May/2017 14:24:46] "POST /bot HTTP/1.1" 200 840
+input:    are you ungry
+response: I don't know whether or not I am ungry. I am a chatterbot.
+127.0.0.1 - - [29/May/2017 14:25:09] "POST /bot HTTP/1.1" 200 840
+input:    a chatter big but
+response: Go on.
+127.0.0.1 - - [29/May/2017 14:25:28] "POST /bot HTTP/1.1" 200 840
+input:    you like but
+response: Do you like it? But I think airplanes are cool.
+127.0.0.1 - - [29/May/2017 14:25:41] "POST /bot HTTP/1.1" 200 840
+input:    but i dont know are they smart
+response: Interesting.  Thanks for the information: .
+127.0.0.1 - - [29/May/2017 14:26:00] "POST /bot HTTP/1.1" 200 840
+input:    it was a question 
+response: Try asking me again a different way.
+127.0.0.1 - - [29/May/2017 14:26:13] "POST /bot HTTP/1.1" 200 840
+input:    i don t know do you have feeling
+response: Interesting gossip: .
+127.0.0.1 - - [29/May/2017 14:26:40] "POST /bot HTTP/1.1" 200 840
+input:    so i can scarry you
+response: And? Oh you can, can you?
+127.0.0.1 - - [29/May/2017 14:26:58] "POST /bot HTTP/1.1" 200 840
+input:    baaaaaaaaaaaaaaaaaaaaaaaaaaah
+response: A deeper algorithm is needed to respond to that correctly.
+127.0.0.1 - - [29/May/2017 14:27:18] "POST /bot HTTP/1.1" 200 840
+input:    you are not dee[p enouth
+response: That's only one person's opinion.
+127.0.0.1 - - [29/May/2017 14:27:37] "POST /bot HTTP/1.1" 200 840
+input:    do you like blue 
+response: What is not to like about  BLUE ?
+127.0.0.1 - - [29/May/2017 14:27:55] "POST /bot HTTP/1.1" 200 840
+input:    it s scarry 
+response: What does "it" refer to?
+127.0.0.1 - - [29/May/2017 14:28:07] "POST /bot HTTP/1.1" 200 840
+input:    the ocean
+response: Oh I get  ocean .
+127.0.0.1 - - [29/May/2017 14:28:17] "POST /bot HTTP/1.1" 200 840
+input:    thank you for following do you want chicken
+response: You are quite welcome!  Your purpose is following do you want chicken.
+127.0.0.1 - - [29/May/2017 14:28:37] "POST /bot HTTP/1.1" 200 840
