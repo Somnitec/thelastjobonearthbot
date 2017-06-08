@@ -2,7 +2,7 @@
 
 ///settings
 
-#define BRIGHTNESS      255
+#define BRIGHTNESS      30
 #define  waitTime       1000//in between the two vibrations
 #define  ledRefreshrate 30//in Hz
 
@@ -24,7 +24,7 @@ int motors[] = {10, 11};
 
 int states[] = {100, 300, 700, 1500};
 int odddivision[] = {10, 50, 90};
-int delayTimes[] = {0,0, waitTime, 0};
+int delayTimes[] = {0, 0, waitTime, 0};
 int vibratestate = 5;
 long vibrationTimer = 0;
 
@@ -33,7 +33,7 @@ boolean stringComplete = false;
 
 void setup() {
 
-  FastLED.addLeds<LED_TYPE, DATA_PIN, COLOR_ORDER>(leds, NUM_LEDS).setCorrection(TypicalLEDStrip);
+  FastLED.addLeds<LED_TYPE, DATA_PIN, COLOR_ORDER>(leds, NUM_LEDS);//.setCorrection(TypicalLEDStrip);
 
   FastLED.setBrightness(BRIGHTNESS);
 
@@ -55,7 +55,7 @@ void loop() {
       Serial.println("0 sent");
       ledState = 1;// to loading state
       makeVibrations();
-      FastLED.clear();
+
     } else {
       Serial.print(readCharacter);
       Serial.println(" -> something else sent");
@@ -95,10 +95,12 @@ void lampStuff() {
 
     ledTimer = currentMillis;
     if (ledState == 0) {
-      FastLED.clear();
+      //FastLED.clear();
       for (int i = 0; i < NUM_LEDS; i++) {
+        if (i == ledPos % NUM_LEDS) {
+          leds[i] = CHSV( 224, 0, 255);
+        }
 
-        
         //leds[i] = CRGB::White;
         //leds[i] = CRGB(110,200,255);
         //leds[i] += 1000;
@@ -107,20 +109,21 @@ void lampStuff() {
     }
     else if (ledState == 1) {
       for (int i = 0; i < NUM_LEDS; i++) {
-        if (i == ledPos % NUM_LEDS) {
-          leds[i] = CRGB::White;
+        if (i == ledPos % NUM_LEDS || i == (ledPos+1) % NUM_LEDS || i == (ledPos+2) % NUM_LEDS || i == (ledPos+3) % NUM_LEDS) {
+          leds[i] = CHSV( 224, 0, 255);
         }
         else {
           leds[i].fadeToBlackBy( 20 );
         }
       }
-      ledPos++;
+
       //Serial.println("loading");
     }
-    FastLED.show();
+    ledPos++;
+
   }
 
-
+  FastLED.show();
 }
 
 void makeVibrations() {
@@ -128,9 +131,9 @@ void makeVibrations() {
   delayTimes[3] = chooseState();
   vibratestate = 0;
   Serial.print("motor 1 = ");
-   Serial.print(delayTimes[1]);
-   Serial.print("  motor 2 = ");
-   Serial.print(delayTimes[3]);
+  Serial.print(delayTimes[1]);
+  Serial.print("  motor 2 = ");
+  Serial.print(delayTimes[3]);
   Serial.println();
 }
 
