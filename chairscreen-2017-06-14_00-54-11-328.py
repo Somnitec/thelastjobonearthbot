@@ -16,7 +16,7 @@ screenwidth=1024
 screenheight=1280
 stream=urllib.urlopen('http://192.168.10.140:8080/video')
 kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(3,3))
-fgbg = cv2.bgsegm.createBackgroundSubtractorGMG()
+fgbg = cv2.BackgroundSubtractorMOG2()
 bytes=''
 while True:
     bytes+=stream.read(16384)
