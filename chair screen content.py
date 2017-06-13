@@ -13,8 +13,8 @@ dotsize = 6
 #img is 516x720
 def show_webcam(mirror=False):
     
-    cam = cv2.VideoCapture('http://192.168.10.140:8080/video')
-    #cam = cv2.VideoCapture(1)
+    #cam = cv2.VideoCapture('http://192.168.10.140:8080/video')
+    cam = cv2.VideoCapture(0)
     cam.set(3,1280)
     cam.set(4,720)
     while cam.isOpened():

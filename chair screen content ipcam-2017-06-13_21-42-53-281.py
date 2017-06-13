@@ -56,7 +56,7 @@ while True:
         font = cv2.FONT_HERSHEY_SIMPLEX
 
         for i in range(0, 30):
-            cv2.putText(img,str(random.random()),((4*screenwidth/6)+10,30+(i*35)), font, 1,(255,255,255),1)
+            cv2.putText(img,str(random.random()),((4screen*width/6)+10,30+(i*20)), font, 0.5,(255,255,255),1)
         
         cv2.rectangle(img,(0,0),(screenwidth,screenheight),(255,255,255),6)
         cv2.rectangle(img,((4*screenwidth/6),0),(screenwidth,(6*screenheight)/7),(255,255,255),6)
@@ -64,8 +64,8 @@ while True:
         cv2.rectangle(img,(0,(6*screenheight)/7),(screenwidth,screenheight),(255,255,255),6)
 
 
-        cv2.namedWindow("output", cv2.WND_PROP_FULLSCREEN)
-        cv2.setWindowProperty("output",cv2.WND_PROP_FULLSCREEN,cv2.WINDOW_FULLSCREEN)
+        #cv2.namedWindow("output", cv2.WND_PROP_FULLSCREEN)
+        #cv2.setWindowProperty("output",cv2.WND_PROP_FULLSCREEN,cv2.WINDOW_FULLSCREEN)
 
         cv2.imshow('output',img)
         

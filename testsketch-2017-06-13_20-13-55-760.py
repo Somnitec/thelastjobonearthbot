@@ -4,7 +4,6 @@ import time
 import requests
 import threading
 from threading import Thread, Event, ThreadError
-import random
 
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 eye_cascade = cv2.CascadeClassifier('haarcascade_eye.xml')
@@ -38,10 +37,8 @@ class Cam():
           jpg = bytes[a:b+2]
           bytes= bytes[b+2:]
           img = cv2.imdecode(np.fromstring(jpg, dtype=np.uint8),cv2.IMREAD_COLOR)
-
-          height, width, channels = img.shape
  
-          gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+          gray = cv2.cvtColor(crop, cv2.COLOR_BGR2GRAY)
 
           faces = face_cascade.detectMultiScale(gray, 1.3, 5)
           for (x,y,w,h) in faces:
@@ -63,13 +60,8 @@ class Cam():
                 points.append([ex+ew/2,ey+eh/2])
             cv2.polylines(roi_color, np.int32([points]), 1, (255,255,255),3)
 
-            
+     
 
-
-          font = cv2.FONT_HERSHEY_SIMPLEX
-          for i in range(0, 30):
-                cv2.putText(img,str(random.random()),(10,30+(i*20)), font, 0.5,(255,255,255),1)
-        
           cv2.imshow('cam',img)
           if cv2.waitKey(1) ==27:
             exit(0)
