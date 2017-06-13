@@ -7,7 +7,7 @@ import os
 
 import serial
 
-ser = serial.Serial('COM3', 9600)
+#ser = serial.Serial('COM3', 9600)
 
 from bottle import route, request, run
 
@@ -29,10 +29,10 @@ else:
     botbrain.saveBrain("bot_brain.brn")
 
 def sayThis(text):
-    ser.write('0')#make it vibrate and start loading bar
+    #ser.write('0')#make it vibrate and start loading bar
     speak.Speak(text)
     #print("\n"+text+" is said\n")
-    ser.write('a')#stop the loading bar
+    #ser.write('a')#stop the loading bar
 
 @route('/bot')
 def startpage():
