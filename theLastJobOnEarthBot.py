@@ -1,3 +1,7 @@
+#import sharedvariables
+#import chairscreen
+
+
 textFadeOutTime = 1000 #in milliseconds
 
 import thread
@@ -18,6 +22,8 @@ sys.coinit_flags = 0
 import pythoncom
 import win32com.client
 speak = win32com.client.Dispatch("SAPI.SpVoice")
+
+say=''  
 
 botbrain = aiml.Kernel()
 
@@ -73,6 +79,7 @@ $("#masterform").submit(function(e) {
 @route('/bot', method='POST')
 def do_bot():
     say = request.forms.get('say')
+    sharedvariables.myList.insert(0,say)
     print("input:    "+ say )
     response = botbrain.respond(say)
     #speak.Speak(response)

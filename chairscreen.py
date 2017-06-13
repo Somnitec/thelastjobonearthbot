@@ -1,7 +1,7 @@
-import sharedvariables
-#import theLastJobOnEarthBot
+#import sharedvariables
+from theLastJobOnEarthBot import *
 
-sharedvariables.init()
+#sharedvariables.init()
 
 import cv2
 import urllib 
@@ -68,7 +68,7 @@ while True:
         cv2.rectangle(img,(0,(6*screenheight)/7),(screenwidth,screenheight),(0,0,0),-1)
         cv2.rectangle(img,(0,(6*screenheight)/7),(screenwidth,screenheight),(255,255,255),6)
 
-        cv2.putText(img,sharedvariables.myList[0],(10,10),font,1,(255,255,255))
+        cv2.putText(img,'blabla',(10,screenheight-100),font,1,(255,255,255))
         
 
         cv2.namedWindow("output", cv2.WND_PROP_FULLSCREEN)
