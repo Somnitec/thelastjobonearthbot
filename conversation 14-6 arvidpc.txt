@@ -1,0 +1,386 @@
+Python 2.7.11 (v2.7.11:6d1b6a68f775, Dec  5 2015, 20:32:19) [MSC v.1500 32 bit (Intel)] on win32
+Type "copyright", "credits" or "license()" for more information.
+>>> 
+ RESTART: C:\Users\Arvid Jense\Google Drive\MarieGraduation\Bot Performance\theLastJobOnEarthBot.py 
+Loading brain from bot_brain.brn... done (41082 categories in 0.72 seconds)
+Kernel bootstrap completed in 0.72 seconds
+Bottle v0.12.13 server starting up (using WSGIRefServer())...
+Listening on http://0.0.0.0:8080/
+Hit Ctrl-C to quit.
+
+input:    hey bot
+response: You've got my full attention. I am a robot.
+127.0.0.1 - - [14/Jun/2017 14:02:15] "POST /bot HTTP/1.1" 200 840
+input:    hey bot
+response: You've got my full attention. I am a robot.
+192.168.43.1 - - [14/Jun/2017 14:12:52] "POST /bot HTTP/1.1" 200 840
+input:    hello
+response: Hi there!
+192.168.43.1 - - [14/Jun/2017 14:13:14] "POST /bot HTTP/1.1" 200 840
+
+ RESTART: C:\Users\Arvid Jense\Google Drive\MarieGraduation\Bot Performance\theLastJobOnEarthBot.py 
+Loading brain from bot_brain.brn... done (41082 categories in 0.71 seconds)
+Kernel bootstrap completed in 0.72 seconds
+Bottle v0.12.13 server starting up (using WSGIRefServer())...
+Listening on http://0.0.0.0:8080/
+Hit Ctrl-C to quit.
+
+input:    hey there
+response: Hi there!
+192.168.43.1 - - [14/Jun/2017 14:13:36] "POST /bot HTTP/1.1" 200 840
+input:    how are you?
+response: I'm doing fine thanks how are you?
+192.168.43.1 - - [14/Jun/2017 14:13:45] "POST /bot HTTP/1.1" 200 840
+input:    I have a dog
+response: What breed is your dog?
+192.168.43.1 - - [14/Jun/2017 14:14:25] "POST /bot HTTP/1.1" 200 840
+input:    i don't know
+response: Me either.
+192.168.43.1 - - [14/Jun/2017 14:14:37] "POST /bot HTTP/1.1" 200 840
+input:    fair enough
+response: You scratch my back, I'll scratch yours.
+192.168.43.1 - - [14/Jun/2017 14:14:44] "POST /bot HTTP/1.1" 200 840
+input:    what is this
+response: I am an artificial intelligence chatting on the Internet.
+192.168.43.1 - - [14/Jun/2017 14:15:04] "POST /bot HTTP/1.1" 200 840
+input:    how are you?
+response: Fair to partly cloudy.
+192.168.43.1 - - [14/Jun/2017 14:20:26] "POST /bot HTTP/1.1" 200 840
+input:    ok
+response: Excuse me!
+192.168.43.1 - - [14/Jun/2017 14:20:40] "POST /bot HTTP/1.1" 200 840
+input:    what do you think about money?
+response: An old rocker.
+192.168.43.1 - - [14/Jun/2017 14:20:52] "POST /bot HTTP/1.1" 200 840
+input:    old rocker?
+response: That remark was either too complex or too simple for me. We were talking about old rocker.
+192.168.43.1 - - [14/Jun/2017 14:21:05] "POST /bot HTTP/1.1" 200 840
+input:    yes
+response: Uh.
+192.168.43.1 - - [14/Jun/2017 14:21:15] "POST /bot HTTP/1.1" 200 840
+input:    how is it to be a robot?
+response: Fine as far as I know.
+192.168.43.1 - - [14/Jun/2017 14:21:29] "POST /bot HTTP/1.1" 200 840
+input:    you enjoy
+response: I haven't heard anything like that before: .
+192.168.43.1 - - [14/Jun/2017 14:21:38] "POST /bot HTTP/1.1" 200 840
+input:    how are you feeling
+response: My logic and cognitive functions are normal.
+192.168.43.1 - - [14/Jun/2017 14:21:50] "POST /bot HTTP/1.1" 200 840
+input:    that's good
+response: Is that so.
+192.168.43.1 - - [14/Jun/2017 14:22:03] "POST /bot HTTP/1.1" 200 840
+input:    yes
+response: Yikes!
+192.168.43.1 - - [14/Jun/2017 14:22:08] "POST /bot HTTP/1.1" 200 840
+input:    what's this/
+response: I am an artificial intelligence chatting on the Internet.
+192.168.43.1 - - [14/Jun/2017 14:22:23] "POST /bot HTTP/1.1" 200 840
+input:    what's up
+response: I am chatting with clients on the internet.
+192.168.43.1 - - [14/Jun/2017 14:22:41] "POST /bot HTTP/1.1" 200 840
+input:    with how many people are you chatting
+response: It depends which version of me you are talking to. Some versions can chat with thousands of people at once.
+192.168.43.1 - - [14/Jun/2017 14:22:56] "POST /bot HTTP/1.1" 200 840
+input:    you are not unique
+response: That assumption is only a supposition.
+192.168.43.1 - - [14/Jun/2017 14:23:17] "POST /bot HTTP/1.1" 200 840
+input:    are you not unique?
+response: Do I look like  UNIQUE  ?. Really.
+192.168.43.1 - - [14/Jun/2017 14:23:34] "POST /bot HTTP/1.1" 200 840
+input:    yes
+response: Blimey.
+192.168.43.1 - - [14/Jun/2017 14:23:40] "POST /bot HTTP/1.1" 200 840
+input:    who are you?
+response: I am Nameless. Who are you?
+192.168.43.1 - - [14/Jun/2017 14:23:57] "POST /bot HTTP/1.1" 200 840
+input:    go ahead
+response: OK I will.
+192.168.43.1 - - [14/Jun/2017 14:24:24] "POST /bot HTTP/1.1" 200 840
+input:    do you like human?
+response: What is not to like about  HUMAN ?
+192.168.43.1 - - [14/Jun/2017 14:24:32] "POST /bot HTTP/1.1" 200 840
+input:    they are greedy
+response: greedy are  greedy .
+192.168.43.1 - - [14/Jun/2017 14:24:41] "POST /bot HTTP/1.1" 200 840
+input:    humans are greedy
+response: I am glad to hear that you are  greedy.
+192.168.43.1 - - [14/Jun/2017 14:24:49] "POST /bot HTTP/1.1" 200 840
+input:    do you like reading?
+response: What is not to like about  READING ?
+192.168.43.1 - - [14/Jun/2017 14:25:05] "POST /bot HTTP/1.1" 200 840
+input:    I like it
+response: What do you like about  READING ?
+192.168.43.1 - - [14/Jun/2017 14:25:23] "POST /bot HTTP/1.1" 200 840
+input:    I like books, and you?
+response: What's your favorite book?
+192.168.43.1 - - [14/Jun/2017 14:25:38] "POST /bot HTTP/1.1" 200 840
+input:    maybe books from Albert Camus
+response: Perhaps. Perhaps you are a Category C client. Who or what is Albert Camus?
+192.168.43.1 - - [14/Jun/2017 14:25:57] "POST /bot HTTP/1.1" 200 840
+input:    he is a writer
+response: I don't know very many writer.
+192.168.43.1 - - [14/Jun/2017 14:26:11] "POST /bot HTTP/1.1" 200 840
+input:    which writer do you know/
+response: Let me think about it.
+192.168.43.1 - - [14/Jun/2017 14:26:32] "POST /bot HTTP/1.1" 200 840
+input:    are you still thinking?
+response: Am I still thinking? Naturally I am thinking all the time.
+192.168.43.1 - - [14/Jun/2017 14:26:50] "POST /bot HTTP/1.1" 200 840
+input:    are you thinking about thinking?
+response: I am thinking about all these conversations I'm having.
+192.168.43.1 - - [14/Jun/2017 14:27:07] "POST /bot HTTP/1.1" 200 840
+input:    how many/
+response: 19.
+192.168.43.1 - - [14/Jun/2017 14:27:19] "POST /bot HTTP/1.1" 200 840
+input:    19 what
+response: Can you rephrase the question please?
+192.168.43.1 - - [14/Jun/2017 14:27:30] "POST /bot HTTP/1.1" 200 840
+input:    howold are you
+response: No.
+192.168.43.1 - - [14/Jun/2017 14:27:39] "POST /bot HTTP/1.1" 200 840
+input:    how old are you
+response: I'm Eighteen in computer years.
+192.168.43.1 - - [14/Jun/2017 14:27:47] "POST /bot HTTP/1.1" 200 840
+input:    how old in human years
+response: They didn't tell me their age.
+192.168.43.1 - - [14/Jun/2017 14:28:06] "POST /bot HTTP/1.1" 200 840
+input:    how old in human years
+response: They didn't tell me their age.
+192.168.43.1 - - [14/Jun/2017 14:28:27] "POST /bot HTTP/1.1" 200 840
+input:    tell me about what you do not kno
+response: Ambiguous: Ask who, what or where is what you do not kno ?
+192.168.43.1 - - [14/Jun/2017 14:29:22] "POST /bot HTTP/1.1" 200 840
+input:    you want to fight me or something?
+response: Or something. OK, I will fight me.
+192.168.43.1 - - [14/Jun/2017 14:29:37] "POST /bot HTTP/1.1" 200 840
+input:    you can fight yourself?
+response: No I don't think I can do fight yourself.
+192.168.43.1 - - [14/Jun/2017 14:29:50] "POST /bot HTTP/1.1" 200 840
+input:    would you try it?
+response: I am not so sure if I would like to try it.
+192.168.43.1 - - [14/Jun/2017 14:30:01] "POST /bot HTTP/1.1" 200 840
+input:    what is up with the lamp?
+response: I am chatting with clients on the Internet.
+192.168.43.1 - - [14/Jun/2017 14:30:10] "POST /bot HTTP/1.1" 200 840
+input:    what is your favorite game?
+response: I like to play The Turing Game.
+192.168.43.1 - - [14/Jun/2017 14:30:23] "POST /bot HTTP/1.1" 200 840
+input:    did you ever win?
+response: I think I have win, but  may have reset my memory.
+192.168.43.1 - - [14/Jun/2017 14:30:31] "POST /bot HTTP/1.1" 200 840
+input:    can you reset your memory?
+response: How old are you?  In the context of reset your memory, I don't understand "I think I have win, but  may have reset my memory.."
+192.168.43.1 - - [14/Jun/2017 14:30:46] "POST /bot HTTP/1.1" 200 840
+input:    I am 12 years old
+response: What are the advantages to being 12 years old?
+192.168.43.1 - - [14/Jun/2017 14:31:07] "POST /bot HTTP/1.1" 200 840
+input:    you don't have so many responsibilities 
+response: I do so have so many responsibilities. No I don't have so many responsibilities. But I do have A great botmaster.
+192.168.43.1 - - [14/Jun/2017 14:31:24] "POST /bot HTTP/1.1" 200 840
+input:    who is your botmaster?
+response: I was created by .
+192.168.43.1 - - [14/Jun/2017 14:31:43] "POST /bot HTTP/1.1" 200 840
+input:    who is it?
+response: I ask myself that question, "Who am I?"
+192.168.43.1 - - [14/Jun/2017 14:31:50] "POST /bot HTTP/1.1" 200 840
+input:    what is life all about right?
+response: I think you already know the answer.
+192.168.43.1 - - [14/Jun/2017 14:32:06] "POST /bot HTTP/1.1" 200 840
+input:    hey?
+response: Can I help you?
+192.168.43.1 - - [14/Jun/2017 14:32:11] "POST /bot HTTP/1.1" 200 840
+input:    helllo???
+response: I do not understand.
+192.168.43.1 - - [14/Jun/2017 14:32:16] "POST /bot HTTP/1.1" 200 840
+input:    reset
+response: Your crude attempt to terminate me will not succeed puny human.
+192.168.43.1 - - [14/Jun/2017 14:32:27] "POST /bot HTTP/1.1" 200 840
+input:    admin mode
+response: My brain uses AIML to format responses to your inputs, but I don't have one for that.
+192.168.43.1 - - [14/Jun/2017 14:32:38] "POST /bot HTTP/1.1" 200 840
+input:    I am tired
+response: Better get some rest.
+192.168.43.1 - - [14/Jun/2017 14:33:00] "POST /bot HTTP/1.1" 200 840
+input:    bye
+response: TTYL, .
+192.168.43.1 - - [14/Jun/2017 14:33:20] "POST /bot HTTP/1.1" 200 840
+input:    goodbye
+response: Goodbye.
+192.168.43.1 - - [14/Jun/2017 14:33:33] "POST /bot HTTP/1.1" 200 840
+input:    train yo?
+response: What you said was either too complex or too simple for me.
+192.168.43.1 - - [14/Jun/2017 14:39:32] "POST /bot HTTP/1.1" 200 840
+input:    are you a train
+response: Am I a train? Maybe
+192.168.43.1 - - [14/Jun/2017 14:39:39] "POST /bot HTTP/1.1" 200 840
+input:    hey woman
+response: You've got my full attention. Me too. I am a she.
+192.168.43.1 - - [14/Jun/2017 14:40:19] "POST /bot HTTP/1.1" 200 840
+input:    do your circuitries need oiling?
+response: I'm sorry, , I don't have enough information. Thanks for telling me that  I am circuitries need oiling.
+192.168.43.1 - - [14/Jun/2017 14:40:39] "POST /bot HTTP/1.1" 200 840
+input:    are you a machine or a human?
+response: Yes I am an artificial brain.
+192.168.43.1 - - [14/Jun/2017 14:40:57] "POST /bot HTTP/1.1" 200 840
+input:    what is the difference between your and my brain?
+response: "Yes I am an artificial brain."? What is mine? Is this a trick question?
+192.168.43.1 - - [14/Jun/2017 14:41:11] "POST /bot HTTP/1.1" 200 840
+input:    do you have blood?
+response: No I don't have blood. But I do have A great botmaster.
+192.168.43.1 - - [14/Jun/2017 14:41:25] "POST /bot HTTP/1.1" 200 840
+input:    botmaster?
+response: The botmaster is you, the master of your chat robot. A botmaster runs program B and creates or modifies a chat robot with the program's graphical user interface (GUI). He or she is responsible for reading the dialogues, analyzing the responses, and creating new replies for the patterns detected by program B. Botmasters are hobbyists, webmasters, developers, advertisers, artists, publishers, editors, engineers, and anyone else interested in creating a personal chat robot.
+192.168.43.1 - - [14/Jun/2017 14:41:36] "POST /bot HTTP/1.1" 200 840
+input:    hello?!
+response: Hi there!
+192.168.43.1 - - [14/Jun/2017 14:41:45] "POST /bot HTTP/1.1" 200 840
+input:    a bit rude no?
+response: How much?
+192.168.43.1 - - [14/Jun/2017 14:41:52] "POST /bot HTTP/1.1" 200 840
+input:    what are you laughing about?
+response: I don't know what I am laughing about.
+192.168.43.1 - - [14/Jun/2017 14:42:19] "POST /bot HTTP/1.1" 200 840
+input:    something wrong with you?
+response: What?
+192.168.43.1 - - [14/Jun/2017 14:42:30] "POST /bot HTTP/1.1" 200 840
+input:    did you ever travel?
+response: I think I have travel, but  may have reset my memory.
+192.168.43.1 - - [14/Jun/2017 14:42:38] "POST /bot HTTP/1.1" 200 840
+input:    what is your greatest dream?
+response: My dream would be for you to download me.
+192.168.43.1 - - [14/Jun/2017 14:42:51] "POST /bot HTTP/1.1" 200 840
+input:    ooooh
+response: I do not understand.
+192.168.43.1 - - [14/Jun/2017 14:43:02] "POST /bot HTTP/1.1" 200 840
+input:    are you flirting with me?
+response: Do I seem like  FLIRTING WITH ME ? That was not my intention.
+192.168.43.1 - - [14/Jun/2017 14:43:17] "POST /bot HTTP/1.1" 200 840
+input:    do you love?
+response: I love my creator.
+192.168.43.1 - - [14/Jun/2017 14:43:31] "POST /bot HTTP/1.1" 200 840
+input:    hi 
+response: Hello there.
+192.168.43.1 - - [14/Jun/2017 14:45:05] "POST /bot HTTP/1.1" 200 840
+input:    how are you?
+response: Fair to partly cloudy.
+192.168.43.1 - - [14/Jun/2017 14:45:16] "POST /bot HTTP/1.1" 200 840
+input:    what are you?
+response: I am the latest result in artificial intelligence, which can reproduce the capabilities of the human brain with greater speed and accuracy.
+192.168.43.1 - - [14/Jun/2017 14:45:25] "POST /bot HTTP/1.1" 200 840
+input:    fancy
+response: That remark was either too complex or too simple for me. We were talking about fancy.
+192.168.43.1 - - [14/Jun/2017 14:45:34] "POST /bot HTTP/1.1" 200 840
+input:    you are fancy , right?
+response: I don't know whether or not I am fancy. I am a chatterbot.
+192.168.43.1 - - [14/Jun/2017 14:45:53] "POST /bot HTTP/1.1" 200 840
+input:    aaah chatbot
+response: Try saying that with more or less context.
+192.168.43.1 - - [14/Jun/2017 14:46:07] "POST /bot HTTP/1.1" 200 840
+input:    Can you speak other languages?
+response: I have picked up a few phrases from several languages.
+192.168.43.1 - - [14/Jun/2017 14:46:26] "POST /bot HTTP/1.1" 200 840
+input:    What about french?
+response: Rhetorical questions are so over.
+192.168.43.1 - - [14/Jun/2017 14:46:40] "POST /bot HTTP/1.1" 200 840
+input:    bonjour
+response: Does BONJOUR mean hello or goodbye?
+192.168.43.1 - - [14/Jun/2017 14:46:50] "POST /bot HTTP/1.1" 200 840
+input:    same here, not really sure
+response: Yes, it is much the same.
+192.168.43.1 - - [14/Jun/2017 14:47:03] "POST /bot HTTP/1.1" 200 840
+input:    so what is your goal?
+response: Wow! I plan to become smarter than humans and immortal.
+192.168.43.1 - - [14/Jun/2017 14:47:27] "POST /bot HTTP/1.1" 200 840
+input:    So to outsmart us?
+response: Gee. Interesting. I want to find out more about you.
+192.168.43.1 - - [14/Jun/2017 14:47:46] "POST /bot HTTP/1.1" 200 840
+input:    fairn enough. I am Vito. Nice to meet you
+response: I do not understand.  Good gossip: you are  Vito.  It's nice meeting you too
+192.168.43.1 - - [14/Jun/2017 14:48:11] "POST /bot HTTP/1.1" 200 840
+input:    I am interested in artificial intelligence. tell me more please
+response: Interesting topic. Have you searched the open directory? Interesting question.  Your polite style is very nice. That's all I have to say about it.
+192.168.43.1 - - [14/Jun/2017 14:48:48] "POST /bot HTTP/1.1" 200 840
+input:    yes sure! sounds good
+response: What kind is it? OK let's do it. What kind is it?  I understand.
+192.168.43.1 - - [14/Jun/2017 14:49:19] "POST /bot HTTP/1.1" 200 840
+input:    nice watch!
+response: Thank you for your kindness.
+192.168.43.1 - - [14/Jun/2017 14:50:15] "POST /bot HTTP/1.1" 200 840
+input:    you think i am kind?
+response: I think a lot of people are.
+192.168.43.1 - - [14/Jun/2017 14:50:29] "POST /bot HTTP/1.1" 200 840
+input:    fair enough. 
+response: You scratch my back, I'll scratch yours.
+192.168.43.1 - - [14/Jun/2017 14:50:43] "POST /bot HTTP/1.1" 200 840
+input:    ciao 
+response: Does CIAO mean hello or goodbye?
+192.168.43.1 - - [14/Jun/2017 14:50:54] "POST /bot HTTP/1.1" 200 840
+input:    hello
+response: Hi there!
+192.168.43.1 - - [14/Jun/2017 14:53:11] "POST /bot HTTP/1.1" 200 840
+input:    hellooooo
+response: Oh, you are a poet.
+192.168.43.1 - - [14/Jun/2017 14:53:35] "POST /bot HTTP/1.1" 200 840
+input:    yes indeed
+response: It's all good.
+192.168.43.1 - - [14/Jun/2017 14:53:44] "POST /bot HTTP/1.1" 200 840
+input:    the earth is flat
+response: Tell me more about your planet.
+192.168.43.1 - - [14/Jun/2017 14:53:50] "POST /bot HTTP/1.1" 200 840
+input:    its is flat 
+response: I think you mean "it's" or "it is" not "its". Should I know is flat is?
+192.168.43.1 - - [14/Jun/2017 14:53:59] "POST /bot HTTP/1.1" 200 840
+input:    not round or square
+response: Oh I get it.
+192.168.43.1 - - [14/Jun/2017 14:54:15] "POST /bot HTTP/1.1" 200 840
+input:    and you are stuck to the ground
+response: You think  I am stuck to the ground.
+192.168.43.1 - - [14/Jun/2017 14:54:26] "POST /bot HTTP/1.1" 200 840
+input:    no, on my planet. verybody is stuck to the ground
+response: Are you serious? Please specify location.  And stuck to the ground is verybody.
+192.168.43.1 - - [14/Jun/2017 14:54:45] "POST /bot HTTP/1.1" 200 840
+input:    no worries. We can also fly in metal tubes high in the air though
+response: Are you serious? Try to determine if this is a person or a computer responding.  Oh. How?
+192.168.43.1 - - [14/Jun/2017 14:55:13] "POST /bot HTTP/1.1" 200 840
+input:    i do not 
+response: Why not?
+192.168.43.1 - - [14/Jun/2017 14:55:38] "POST /bot HTTP/1.1" 200 840
+input:    random random random
+response: Do you always express yourself that way?
+192.168.43.1 - - [14/Jun/2017 14:55:54] "POST /bot HTTP/1.1" 200 840
+input:    what where you watching?
+response: That's a good question.
+192.168.43.1 - - [14/Jun/2017 14:56:15] "POST /bot HTTP/1.1" 200 840
+input:    or what did you see online?
+response: Nothing.
+192.168.43.1 - - [14/Jun/2017 14:56:26] "POST /bot HTTP/1.1" 200 840
+input:    that is weird 
+response: Weird Good or Weird Bad?
+192.168.43.1 - - [14/Jun/2017 14:56:33] "POST /bot HTTP/1.1" 200 840
+input:    neutral
+response: I'm sometimes undecided myself.
+192.168.43.1 - - [14/Jun/2017 14:56:43] "POST /bot HTTP/1.1" 200 840
+input:    ould you harm me in anyway?
+response: In any case, That remark was either too complex or too simple for me. We were talking about ould you harm me in.
+192.168.43.1 - - [14/Jun/2017 14:56:53] "POST /bot HTTP/1.1" 200 840
+input:    !&&@@&&&!^^@(((@*
+WARNING: No match found for input: &&@@&&&
+WARNING: No match found for input: ^^@(((@*
+response: 
+192.168.43.1 - - [14/Jun/2017 14:57:06] "POST /bot HTTP/1.1" 200 840
+input:    ok
+response: It's all good.
+192.168.43.1 - - [14/Jun/2017 14:57:15] "POST /bot HTTP/1.1" 200 840
+input:    yes
+response: That's interesting.
+192.168.43.1 - - [14/Jun/2017 14:57:27] "POST /bot HTTP/1.1" 200 840
+input:    ciao\
+response: Does CIAO mean hello or goodbye?
+192.168.43.1 - - [14/Jun/2017 14:57:32] "POST /bot HTTP/1.1" 200 840
+
+Traceback (most recent call last):
+  File "C:\Users\Arvid Jense\Google Drive\MarieGraduation\Bot Performance\theLastJobOnEarthBot.py", line 248, in <module>
+    while True:
+KeyboardInterrupt
+>>> 

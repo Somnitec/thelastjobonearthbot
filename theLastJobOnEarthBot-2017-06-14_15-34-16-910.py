@@ -34,7 +34,7 @@ ser = serial.Serial('COM5', 9600)
 
 speak = win32com.client.Dispatch("SAPI.SpVoice")
 
-linecolor = (255, 247, 230)
+
 
 say=''
 
@@ -121,13 +121,13 @@ def screenthings():
             #for i in range(0, 30):
                 #cv2.putText(img,str(random.random()),((4*screenwidth/6)+10,30+(i*35)), font, 1,(255,255,255),1)
             
-            cv2.rectangle(img,(0,0),(screenwidth,screenheight),linecolor,6)
+            cv2.rectangle(img,(0,0),(screenwidth,screenheight),(255,255,255),6)
             #cv2.rectangle(img,((4*screenwidth/6),0),(screenwidth,(6*screenheight)/7),(255,255,255),6)
-            cv2.rectangle(img,(0,(5*screenheight)/7),(screenwidth,screenheight),(0, 0, 0),-1)
-            cv2.rectangle(img,(0,(5*screenheight)/7),(screenwidth,screenheight),linecolor,6)
+            cv2.rectangle(img,(0,(6*screenheight)/7),(screenwidth,screenheight),(0, 0, 0),-1)
+            cv2.rectangle(img,(0,(6*screenheight)/7),(screenwidth,screenheight),(255,255,255),6)
 
-            cv2.putText(img,'the human expert is finding a response to:',(40,screenheight-120),font,1,linecolor)
-            cv2.putText(img,say,(40,screenheight-80),font,1.5,linecolor)
+            cv2.putText(img,'the human expert is finding a response to:',(40,screenheight-120),font,0.5,(255, 231, 179))
+            cv2.putText(img,say,(40,screenheight-80),font,1,(0,0,0))
             
             #cv2.putText(img,say,(10,100),font,1,(255,255,255))
             

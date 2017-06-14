@@ -3,7 +3,7 @@
 ///settings
 
 #define BRIGHTNESS      90
-#define  waitTime       1000//in between the two vibrations
+#define  waitTime       250//in between the two vibrations
 #define  ledRefreshrate 60//in Hz
 
 ///
@@ -25,7 +25,7 @@ int motors[] = {10, 11};
 int states[] = {100, 300, 700, 1500};
 int odddivision[] = {10, 50, 90};
 int delayTimes[] = {0, 0, waitTime, 0};
-int vibratestate = 5;
+int vibratestate = 3;
 long vibrationTimer = 0;
 
 
@@ -34,7 +34,7 @@ boolean stringComplete = false;
 
 void setup() {
 
-  FastLED.addLeds<LED_TYPE, DATA_PIN, COLOR_ORDER>(leds, NUM_LEDS);//.setCorrection(TypicalLEDStrip);
+  FastLED.addLeds<LED_TYPE, DATA_PIN, COLOR_ORDER>(leds, NUM_LEDS).setCorrection(CarbonArc);
 
   FastLED.setBrightness(BRIGHTNESS);
 
@@ -44,7 +44,6 @@ void setup() {
   while (!Serial) {
     ; // wait for serial port to connect. Needed for native USB port only
   }
-  //lampWaiting();
 
 }
 
@@ -52,27 +51,32 @@ void loop() {
   if (Serial.available() > 0) {
     char readCharacter = Serial.read();
 
+
     if (readCharacter == '0') {
       //Serial.println("0 sent");
       ledState = 1;// to loading state
       makeVibrations();
 
-    } else {
+    } else if (readCharacter == 'a') {
       //Serial.print(readCharacter);
       //Serial.println(" -> something else sent");
       ledState = 0;//to waiting state
     }
+    while (Serial.available() > 0) {
+      Serial.read();  //flushing serial
+    }
+
   }
   vibrationStuff();
   lampStuff();
-  Serial.flush();
+  //Serial.flush();
 }
 
 void vibrationStuff() {
   unsigned long currentMillis = millis();
   if (currentMillis - vibrationTimer > delayTimes[vibratestate]) {
     vibrationTimer = currentMillis;
-    Serial.println(vibrationTimer);
+    //Serial.println(vibrationTimer);
     if (vibratestate == 0) {
       digitalWrite(motors[0], HIGH);
       //Serial.println("motor 1");
@@ -87,6 +91,7 @@ void vibrationStuff() {
       //Serial.println("stopped");
     }
     vibratestate++;
+    if (vibratestate > 3)vibratestate = 3;
   }
 }
 void lampStuff() {
@@ -95,11 +100,24 @@ void lampStuff() {
   if (currentMillis - ledTimer > 1000 / ledRefreshrate) {
 
     ledTimer = currentMillis;
-    if (ledState == 0) {
+
+    for (int i = 0; i < NUM_LEDS; i++) {
+      if (i == ledPos % NUM_LEDS || i == (ledPos + 1) % NUM_LEDS || i == (ledPos + 2) % NUM_LEDS || i == (ledPos + 3) % NUM_LEDS || i == (ledPos + 4) % NUM_LEDS || i == (ledPos + 5) % NUM_LEDS) {
+        //leds[i] = CHSV( 224, 0, 255);
+        leds[i] = CRGB::White;
+      }
+      else {
+        if (ledState == 1)leds[i].fadeToBlackBy( 20 );
+      }
+    }
+    /*
+      if (ledState == 0) {
       //FastLED.clear();
+
       for (int i = 0; i < NUM_LEDS; i++) {
         if (i == ledPos % NUM_LEDS) {
-          leds[i] = CHSV( 224, 0, 255);
+          //leds[i] = CHSV( 224, 0, 255);
+          leds[i] = CRGB::White;
         }
 
         //leds[i] = CRGB::White;
@@ -107,19 +125,19 @@ void lampStuff() {
         //leds[i] += 1000;
       }
       //Serial.println("waiting");
-    }
-    else if (ledState == 1) {
+      }
+      else if (ledState == 1) {
       for (int i = 0; i < NUM_LEDS; i++) {
-        if (i == ledPos % NUM_LEDS || i == (ledPos+1) % NUM_LEDS || i == (ledPos+2) % NUM_LEDS || i == (ledPos+3) % NUM_LEDS|| i == (ledPos+4) % NUM_LEDS|| i == (ledPos+5) % NUM_LEDS) {
-          leds[i] = CHSV( 224, 0, 255);
+        if (i == ledPos % NUM_LEDS || i == (ledPos + 1) % NUM_LEDS || i == (ledPos + 2) % NUM_LEDS || i == (ledPos + 3) % NUM_LEDS || i == (ledPos + 4) % NUM_LEDS || i == (ledPos + 5) % NUM_LEDS) {
+          //leds[i] = CHSV( 224, 0, 255);
+          leds[i] = CRGB::White;
         }
         else {
           leds[i].fadeToBlackBy( 20 );
         }
       }
+    */
 
-      //Serial.println("loading");
-    }
     ledPos++;
 
   }
@@ -132,11 +150,11 @@ void makeVibrations() {
   delayTimes[3] = chooseState();
   vibratestate = 0;
   /*
-  Serial.print("motor 1 = ");
-  Serial.print(delayTimes[1]);
-  Serial.print("  motor 2 = ");
-  Serial.print(delayTimes[3]);
-  Serial.println();
+    Serial.print("motor 1 = ");
+    Serial.print(delayTimes[1]);
+    Serial.print("  motor 2 = ");
+    Serial.print(delayTimes[3]);
+    Serial.println();
   */
 }
 
