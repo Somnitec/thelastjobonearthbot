@@ -28,6 +28,7 @@ int delayTimes[] = {0, 0, waitTime, 0};
 int vibratestate = 5;
 long vibrationTimer = 0;
 
+
 String inputString = "";         // a string to hold incoming data
 boolean stringComplete = false;
 
@@ -52,13 +53,13 @@ void loop() {
     char readCharacter = Serial.read();
 
     if (readCharacter == '0') {
-      Serial.println("0 sent");
+      //Serial.println("0 sent");
       ledState = 1;// to loading state
       makeVibrations();
 
     } else {
-      Serial.print(readCharacter);
-      Serial.println(" -> something else sent");
+      //Serial.print(readCharacter);
+      //Serial.println(" -> something else sent");
       ledState = 0;//to waiting state
     }
   }
@@ -74,16 +75,16 @@ void vibrationStuff() {
     Serial.println(vibrationTimer);
     if (vibratestate == 0) {
       digitalWrite(motors[0], HIGH);
-      Serial.println("motor 1");
+      //Serial.println("motor 1");
     } else if (vibratestate == 1) {
       digitalWrite(motors[0], LOW);
-      Serial.println("waiting");
+      //Serial.println("waiting");
     } else if (vibratestate == 2) {
       digitalWrite(motors[1], HIGH);
-      Serial.println("motor 2");
+      //Serial.println("motor 2");
     } else if (vibratestate == 3) {
       digitalWrite(motors[1], LOW);
-      Serial.println("stopped");
+      //Serial.println("stopped");
     }
     vibratestate++;
   }
@@ -130,11 +131,13 @@ void makeVibrations() {
   delayTimes[1] = chooseState();
   delayTimes[3] = chooseState();
   vibratestate = 0;
+  /*
   Serial.print("motor 1 = ");
   Serial.print(delayTimes[1]);
   Serial.print("  motor 2 = ");
   Serial.print(delayTimes[3]);
   Serial.println();
+  */
 }
 
 

@@ -23,6 +23,7 @@ smile_cascade = cv2.CascadeClassifier('haarcascade_smile.xml')
 
 ####botstuff
 textFadeOutTime = 1000 #in milliseconds
+ser = serial.Serial('COM3', 9600)
 
 import sys
 sys.coinit_flags = 0
@@ -30,7 +31,9 @@ import pythoncom
 import win32com.client
 speak = win32com.client.Dispatch("SAPI.SpVoice")
 
-say='initial'
+
+
+say=''
 
 botbrain = aiml.Kernel()
 
@@ -45,10 +48,10 @@ else:
 
 def sayThis(text):
     global say
-    #ser.write('0')#make it vibrate and start loading bar
+    ser.write('0')#make it vibrate and start loading bar
     speak.Speak(text)
     say=''
-    #ser.write('a')#stop the loading bar
+    ser.write('a')#stop the loading bar
 ###
 
 def screenthings():
@@ -104,13 +107,14 @@ def screenthings():
             cv2.rectangle(img,(0,(6*screenheight)/7),(screenwidth,screenheight),(0,0,0),-1)
             cv2.rectangle(img,(0,(6*screenheight)/7),(screenwidth,screenheight),(255,255,255),6)
 
-            #cv2.putText(img,'blabla',(10,screenheight-100),font,1,(255,255,255))
+            cv2.putText(img,'finding a response to:',(40,screenheight-120),font,0.5,(255,255,255))
+            cv2.putText(img,say,(40,screenheight-80),font,1,(255,255,255))
             
-            cv2.putText(img,say,(10,100),font,1,(255,255,255))
+            #cv2.putText(img,say,(10,100),font,1,(255,255,255))
             
 
-            #cv2.namedWindow("output", cv2.WND_PROP_FULLSCREEN)
-            #cv2.setWindowProperty("output",cv2.WND_PROP_FULLSCREEN,cv2.WINDOW_FULLSCREEN)
+            cv2.namedWindow("output", cv2.WND_PROP_FULLSCREEN)
+            cv2.setWindowProperty("output",cv2.WND_PROP_FULLSCREEN,cv2.WINDOW_FULLSCREEN)
 
             cv2.imshow('output',img)
         
