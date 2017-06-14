@@ -2,9 +2,9 @@
 
 ///settings
 
-#define BRIGHTNESS      30
+#define BRIGHTNESS      90
 #define  waitTime       1000//in between the two vibrations
-#define  ledRefreshrate 30//in Hz
+#define  ledRefreshrate 60//in Hz
 
 ///
 
@@ -109,7 +109,7 @@ void lampStuff() {
     }
     else if (ledState == 1) {
       for (int i = 0; i < NUM_LEDS; i++) {
-        if (i == ledPos % NUM_LEDS || i == (ledPos+1) % NUM_LEDS || i == (ledPos+2) % NUM_LEDS || i == (ledPos+3) % NUM_LEDS) {
+        if (i == ledPos % NUM_LEDS || i == (ledPos+1) % NUM_LEDS || i == (ledPos+2) % NUM_LEDS || i == (ledPos+3) % NUM_LEDS|| i == (ledPos+4) % NUM_LEDS|| i == (ledPos+5) % NUM_LEDS) {
           leds[i] = CHSV( 224, 0, 255);
         }
         else {
