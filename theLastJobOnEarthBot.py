@@ -1,17 +1,23 @@
 import os
 from threading import Thread
-import threading, Queue
 from time import sleep
+from timeit import default_timer as timer
 import thread
 import cv2
-import urllib 
+import urllib
 import numpy as np
 import random
 from bottle import route, request, run,template
 import aiml
 import serial
+import sys
+sys.coinit_flags = 0
+import pythoncom
+import win32com.client
 
 ####screenstuff
+minframerate = 10#fps
+
 screenwidth=1024
 screenheight=1280
 stream=urllib.urlopen('http://192.168.10.140:8080/video')
@@ -23,12 +29,9 @@ smile_cascade = cv2.CascadeClassifier('haarcascade_smile.xml')
 
 ####botstuff
 textFadeOutTime = 1000 #in milliseconds
-ser = serial.Serial('COM3', 9600)
+#ser = serial.Serial('COM3', 9600)
 
-import sys
-sys.coinit_flags = 0
-import pythoncom
-import win32com.client
+
 speak = win32com.client.Dispatch("SAPI.SpVoice")
 
 
@@ -48,23 +51,39 @@ else:
 
 def sayThis(text):
     global say
-    ser.write('0')#make it vibrate and start loading bar
+    #ser.write('0')#make it vibrate and start loading bar
     speak.Speak(text)
     say=''
-    ser.write('a')#stop the loading bar
+    #ser.write('a')#stop the loading bar
 ###
 
 def screenthings():
-    
+    lasttime=timer()
     bytes=''
     while True:
         #print 'A\n'
+        urllib.urlcleanup()
         bytes+=stream.read(16384)
+        
         a = bytes.find('\xff\xd8')
-        b = bytes.find('\xff\xd9')
+        b = bytes.find('\xff\xd9')        
+
+
+        
         if a!=-1 and b!=-1:
             jpg = bytes[a:b+2]
             bytes= bytes[b+2:]
+            
+            
+
+            #stream.flush()
+            #currenttime=timer()
+            #print currenttime-lasttime, 1./minframerate
+            #if currenttime-lasttime > 1./minframerate:
+                #continue
+                #print 'skipping'
+            #lasttime=currenttime
+            
             rawcam = cv2.imdecode(np.fromstring(jpg, dtype=np.uint8),cv2.IMREAD_COLOR)
             cam=cv2.flip(rawcam,1)
             height, width, channels = cam.shape
