@@ -16,9 +16,9 @@ CRGB leds[NUM_LEDS];
 
 
 
-long ledTimer = 0;
+unsigned long ledTimer = 0;
 int ledState = 0;//0 is waiting, 1 is loading
-int ledPos = 0;
+unsigned long ledPos = 0;
 
 int motors[] = {10, 11};
 
@@ -26,7 +26,7 @@ int states[] = {100, 300, 700, 1500};
 int odddivision[] = {10, 50, 90};
 int delayTimes[] = {0, 0, waitTime, 0};
 int vibratestate = 3;
-long vibrationTimer = 0;
+unsigned long vibrationTimer = 0;
 
 
 String inputString = "";         // a string to hold incoming data
@@ -139,6 +139,10 @@ void lampStuff() {
     */
 
     ledPos++;
+    Serial.print(ledPos);
+    Serial.print('\t');
+    Serial.println
+    (ledPos%NUM_LEDS);
 
   }
 
