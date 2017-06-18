@@ -14,31 +14,40 @@ import sys
 sys.coinit_flags = 0
 import pythoncom
 import win32com.client
+import textwrap
+import string
 
+
+print cv2.useOptimized()
 ####screenstuff
 minframerate = 10#fps
 
 screenwidth=1024
 screenheight=1280
-stream=urllib.urlopen('http://172.21.101.198:8080/video')
+stream=urllib.urlopen('http://192.168.10.140:8080/video')
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 eye_cascade = cv2.CascadeClassifier('haarcascade_eye.xml')
 smile_cascade = cv2.CascadeClassifier('haarcascade_smile.xml')
 
+HIlogo = cv2.imread("HIlogo.png", -1)
+
+
 ###
 
 ####botstuff
+
 textFadeOutTime = 1000 #in milliseconds
-ser = serial.Serial('COM5', 9600)
+#ser = serial.Serial('COM5', 9600)
 
 
 speak = win32com.client.Dispatch("SAPI.SpVoice")
 
 linecolor = (255, 247, 230)
 
-say=''
+say='test'
 
 botbrain = aiml.Kernel()
+botbrain.verbose(True)
 
 if os.path.isfile("bot_brain.brn"):
     botbrain.bootstrap(brainFile = "bot_brain.brn")
@@ -51,23 +60,25 @@ else:
 
 def sayThis(text):
     global say
-    ser.write('0')#make it vibrate and start loading bar
+    #ser.write('0')#make it vibrate and start loading bar
     speak.Speak(text)
-    #say=''
-    ser.write('a')#stop the loading bar
+    #say='' #can be used to clear the last sentence
+    #ser.write('a')#stop the loading bar
 ###
 
 def screenthings():
+    global say
     lasttime=timer()
     bytes=''
     while True:
         #print 'A\n'
+        
         urllib.urlcleanup()
         bytes+=stream.read(16384)
         
+        
         a = bytes.find('\xff\xd8')
         b = bytes.find('\xff\xd9')        
-
 
         
         if a!=-1 and b!=-1:
@@ -75,7 +86,7 @@ def screenthings():
             bytes= bytes[b+2:]
             
             
-
+            
             #stream.flush()
             #currenttime=timer()
             #print currenttime-lasttime, 1./minframerate
@@ -85,15 +96,17 @@ def screenthings():
             #lasttime=currenttime
             
             rawcam = cv2.imdecode(np.fromstring(jpg, dtype=np.uint8),cv2.IMREAD_COLOR)
+            
             cam=cv2.flip(rawcam,1)
+            
             height, width, channels = cam.shape
         
             desiredwidth=int(float(screenwidth)/screenheight*height)
             startpoint=int((width-desiredwidth)/2)
 
             crop=cam[0:height,startpoint:startpoint+desiredwidth]
-            img=cv2.resize(crop,(screenwidth,screenheight))
-
+            img=crop
+          
             gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
             faces = face_cascade.detectMultiScale(gray, 1.3, 5)
             for (x,y,w,h) in faces:
@@ -108,34 +121,86 @@ def screenthings():
                     cv2.circle(roi_color,(ex+ew/2,ey+eh/2),ew/4, (255,255,255),-1)
                 cv2.polylines(roi_color, np.int32([eyepoints]), 1, (255,255,255),2)
 
-                smile = smile_cascade.detectMultiScale(roi_gray)
+                '''smile = smile_cascade.detectMultiScale(roi_gray)
                 points = []
                 for (ex,ey,ew,eh) in smile:
                     cv2.rectangle(roi_color,(ex,ey),(ex+ew,ey+eh),(255,255,255),2)
                     points.append([ex+ew/2,ey+eh/2])
                 cv2.polylines(roi_color, np.int32([points]), 1, (255,255,255),1)
-
+                '''
+            e1 = cv2.getTickCount()  
+            img=cv2.resize(crop,(screenwidth,screenheight))
+            e2 = cv2.getTickCount()
+            #print (e2 - e1)/ cv2.getTickFrequency()
+            
             #interface stuff
-            font = cv2.FONT_HERSHEY_SIMPLEX
+            font = cv2.FONT_HERSHEY_DUPLEX
 
+            xpos=10
+            linedist=22
+            ypos=850
+            N = 12
+            randomtext = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(N))
+            cv2.putText(img,randomtext,(xpos,ypos+0*linedist), font, .5,(255,255,255),1)
+            randomtext = ''.join(random.choice('0' + '1') for _ in range(N))
+            cv2.putText(img,randomtext,(xpos,ypos+1*linedist), font, .5,(255,255,255),1)
+            randomtext = ''.join(str(random.randint(0,1)) for _ in range(N))
+            cv2.putText(img,randomtext,(xpos,ypos+2*linedist), font, .5,(255,255,255),1)
+            N=random.randint(3,12)
+            randomtext = str(random.uniform(0., 9.9))
+            cv2.putText(img,randomtext,(xpos,ypos+3*linedist), font, .5,(255,255,255),1)
+            randomtext = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(N))
+            cv2.putText(img,randomtext,(xpos,ypos+4*linedist), font, .5,(255,255,255),1)
+            randomtext = str(random.uniform(0., 9.9))
+            cv2.putText(img,randomtext,(xpos,ypos+5*linedist), font, .5,(255,255,255),1)
+            randomtext = ''.join(random.choice('0' + '1') for _ in range(N))
+            cv2.putText(img,randomtext,(xpos,ypos+6*linedist), font, .5,(255,255,255),1)
+            N=random.randint(3,12)
+            randomtext = ''.join(str(random.randint(0,9)) for _ in range(N))
+            cv2.putText(img,randomtext,(xpos,ypos+7*linedist), font, .5,(255,255,255),1)
+            randomtext = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(N))
+            cv2.putText(img,randomtext,(xpos,ypos+8*linedist), font, .5,(255,255,255),1)
+            N=12
+            randomtext = ''.join(random.choice('0' + '1') for _ in range(N))
+            cv2.putText(img,randomtext,(xpos,ypos+9*linedist), font, .5,(255,255,255),1)
+            randomtext = ''.join(str(random.randint(0,1)) for _ in range(N))
+            cv2.putText(img,randomtext,(xpos,ypos+10*linedist), font, .5,(255,255,255),1)
+            
+
+            
+        
             #for i in range(0, 30):
                 #cv2.putText(img,str(random.random()),((4*screenwidth/6)+10,30+(i*35)), font, 1,(255,255,255),1)
             
-            cv2.rectangle(img,(0,0),(screenwidth,screenheight),linecolor,6)
+            #cv2.rectangle(img,(0,0),(screenwidth,screenheight),linecolor,6)
             #cv2.rectangle(img,((4*screenwidth/6),0),(screenwidth,(6*screenheight)/7),(255,255,255),6)
-            cv2.rectangle(img,(0,(5*screenheight)/7),(screenwidth,screenheight),(0, 0, 0),-1)
-            cv2.rectangle(img,(0,(5*screenheight)/7),(screenwidth,screenheight),linecolor,6)
+            cv2.rectangle(img,(0,(6*screenheight)/7),(screenwidth,screenheight),(0, 0, 0),-1)
+            #cv2.rectangle(img,(0,(5*screenheight)/7),(screenwidth,screenheight),linecolor,6)
+            rectsize = 25
+            xoffset=-80
+            ypos=(6*screenheight)/7
+            cv2.rectangle(img,(screenwidth/2-rectsize+xoffset,ypos-rectsize),(screenwidth/2+rectsize+xoffset,ypos+rectsize),linecolor,1)
+            cv2.putText(img,'Hi',(screenwidth/2 -22+xoffset,ypos+15),font,1.4,linecolor,1)
+            cv2.putText(img,'Human',(screenwidth/2+35+xoffset,ypos-2),font,.6,linecolor)
+            cv2.putText(img,'industries',(screenwidth/2+xoffset+35,ypos+18),font,.6,linecolor)
 
-            cv2.putText(img,'the human expert is finding a response to:',(40,screenheight-120),font,1,linecolor)
-            cv2.putText(img,say,(40,screenheight-80),font,1.5,linecolor)
+            cv2.putText(img,"visitor:",(40,screenheight-120),font,0.6,linecolor,1)
+            #say="this is a really super long sentence you  this is a\n really super l"
+            blabla=say
+            blabla=textwrap.wrap(blabla,width=55)
+            for i, line in enumerate(blabla):
+                cv2.putText(img,line,(40,screenheight-80+34*i),font,1,linecolor,1)
             
             #cv2.putText(img,say,(10,100),font,1,(255,255,255))
+
             
 
             cv2.namedWindow("output", cv2.WND_PROP_FULLSCREEN)
             cv2.setWindowProperty("output",cv2.WND_PROP_FULLSCREEN,cv2.WINDOW_FULLSCREEN)
 
             cv2.imshow('output',img)
+
+
         
         if cv2.waitKey(1) ==27:
             break
