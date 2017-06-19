@@ -24,7 +24,7 @@ minframerate = 10#fps
 
 screenwidth=1024
 screenheight=1280
-stream=urllib.urlopen('http://192.168.10.140:8080/video')
+stream=urllib.urlopen('http://192.168.10.2:8080/video')
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 eye_cascade = cv2.CascadeClassifier('haarcascade_eye.xml')
 smile_cascade = cv2.CascadeClassifier('haarcascade_smile.xml')
@@ -44,7 +44,7 @@ speak = win32com.client.Dispatch("SAPI.SpVoice")
 
 linecolor = (255, 247, 230)
 
-say='test'
+say=''
 
 botbrain = aiml.Kernel()
 botbrain.verbose(True)
@@ -121,13 +121,13 @@ def screenthings():
                     cv2.circle(roi_color,(ex+ew/2,ey+eh/2),ew/4, (255,255,255),-1)
                 cv2.polylines(roi_color, np.int32([eyepoints]), 1, (255,255,255),2)
 
-                '''smile = smile_cascade.detectMultiScale(roi_gray)
-                points = []
-                for (ex,ey,ew,eh) in smile:
-                    cv2.rectangle(roi_color,(ex,ey),(ex+ew,ey+eh),(255,255,255),2)
+            smile = smile_cascade.detectMultiScale(gray)
+            points = []
+            for (ex,ey,ew,eh) in smile:
+                    cv2.rectangle(img,(ex,ey),(ex+ew,ey+eh),(255,255,255),2)
                     points.append([ex+ew/2,ey+eh/2])
-                cv2.polylines(roi_color, np.int32([points]), 1, (255,255,255),1)
-                '''
+            cv2.polylines(img, np.int32([points]), 1, (255,255,255),1)
+                
             e1 = cv2.getTickCount()  
             img=cv2.resize(crop,(screenwidth,screenheight))
             e2 = cv2.getTickCount()
@@ -239,7 +239,7 @@ def startpage():
             ">            
         </form>
         
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+    <script src='./jquery.min.js'></script>
 
     <script>
     
