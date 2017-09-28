@@ -20,25 +20,26 @@ import string
 
 print cv2.useOptimized()
 ####screenstuff
+"""
 minframerate = 10#fps
 
 screenwidth=1024
 screenheight=1280
-stream=urllib.urlopen('http://192.168.10.112:8080/video')
+stream=urllib.urlopen('http://192.168.43.93:8080/video')
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 eye_cascade = cv2.CascadeClassifier('haarcascade_eye.xml')
 smile_cascade = cv2.CascadeClassifier('haarcascade_smile.xml')
 
 HIlogo = cv2.imread("HIlogo.png", -1)
-
+"""
 
 ###
 
 ####botstuff
 
 textFadeOutTime = 1000 #in milliseconds
-ser = serial.Serial('COM5', 9600)
-
+#ser = serial.Serial('COM6', 9600)
+#ser.close()
 
 speak = win32com.client.Dispatch("SAPI.SpVoice")
 
@@ -60,10 +61,14 @@ else:
 
 def sayThis(text):
     global say
-    ser.write('0')#make it vibrate and start loading bar
+    #ser.close()
+    #ser.open()
+    #ser.write('0')#make it vibrate and start loading bar
     speak.Speak(text)
     #say='' #can be used to clear the last sentence
-    ser.write('a')#stop the loading bar
+    #ser.write('a')#stop the loading bar
+    #ser.close()
+    #ser.open()
 ###
 
 def screenthings():
@@ -72,7 +77,7 @@ def screenthings():
     bytes=''
     while True:
         #print 'A\n'
-        
+        """
         urllib.urlcleanup()
         bytes+=stream.read(16384)
         
@@ -199,6 +204,7 @@ def screenthings():
             cv2.setWindowProperty("output",cv2.WND_PROP_FULLSCREEN,cv2.WINDOW_FULLSCREEN)
 
             cv2.imshow('output',img)
+            """
 
 
         

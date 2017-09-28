@@ -4,7 +4,7 @@
 
 #define BRIGHTNESS      90
 #define  waitTime       250//in between the two vibrations
-#define  ledRefreshrate 60//in Hz
+#define  ledRefreshrate 60//in hz
 
 ///
 
@@ -16,7 +16,7 @@ CRGB leds[NUM_LEDS];
 
 
 
-unsigned long ledTimer = 0;
+long ledTimer = 0;
 int ledState = 0;//0 is waiting, 1 is loading
 unsigned long ledPos = 0;
 
@@ -62,10 +62,11 @@ void loop() {
       //Serial.println(" -> something else sent");
       ledState = 0;//to waiting state
     }
+    /*
     while (Serial.available() > 0) {
       Serial.read();  //flushing serial
     }
-
+    */
   }
   vibrationStuff();
   lampStuff();
@@ -97,7 +98,7 @@ void vibrationStuff() {
 void lampStuff() {
 
   unsigned long currentMillis = millis();
-  if (currentMillis - ledTimer > 1000 / ledRefreshrate) {
+  if (currentMillis - ledTimer > 1000/ledRefreshrate) {
 
     ledTimer = currentMillis;
 
