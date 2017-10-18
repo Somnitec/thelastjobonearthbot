@@ -4,7 +4,7 @@ import thread
 
 import aiml
 import os
-
+import serial
 
 from bottle import route, request, run
 
@@ -16,6 +16,9 @@ sys.coinit_flags = 0
 import win32com.client
 speak = win32com.client.Dispatch("SAPI.SpVoice")
 
+ser = serial.Serial('COM3', 9600)
+
+
 botbrain = aiml.Kernel()
 
 if os.path.isfile("bot_brain.brn"):
@@ -26,7 +29,9 @@ else:
     botbrain.saveBrain("bot_brain.brn")
 
 def sayThis(text):
+    ser.write('0')#make it vibrate and start loading bar
     speak.Speak(text)
+    ser.write('a')#stop the loading bar
     #print("\n"+text+" is said\n")
 
 @route('/bot')
