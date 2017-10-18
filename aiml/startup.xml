@@ -37,7 +37,7 @@
             <!--You may enumerate each file you want the bot to load, or use the "*"
                 to indicate you want all AIML files in a given directory.
                 The path is relative to server.engine.home in your server properties.-->
-	    <learn></learn>
+	    <learn>aiml/*.aiml</learn>
         </bot>
     </bots>
     <!--Substitutions are grouped according to several AIML interpreter functions.-->

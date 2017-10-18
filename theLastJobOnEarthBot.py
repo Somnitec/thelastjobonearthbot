@@ -12,7 +12,7 @@ from time import sleep
 
 import sys
 sys.coinit_flags = 0
-import pythoncom
+#import pythoncom
 import win32com.client
 speak = win32com.client.Dispatch("SAPI.SpVoice")
 
@@ -21,7 +21,7 @@ botbrain = aiml.Kernel()
 if os.path.isfile("bot_brain.brn"):
     botbrain.bootstrap(brainFile = "bot_brain.brn")
 else:
-    #botbrain.bootstrap(learnFiles = "aiml/startup.xml", commands = "load aiml b")
+    #botbrain.bootstrap(learnFiles = "aiml/startup.xml")
     botbrain.bootstrap(learnFiles = "aiml/std-startup.xml", commands = "load aiml b")
     botbrain.saveBrain("bot_brain.brn")
 
