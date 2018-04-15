@@ -16,7 +16,7 @@ sys.coinit_flags = 0
 import win32com.client
 speak = win32com.client.Dispatch("SAPI.SpVoice")
 
-ser = serial.Serial('COM3', 9600)
+#ser = serial.Serial('COM3', 9600)
 
 
 botbrain = aiml.Kernel()
@@ -29,10 +29,10 @@ else:
     botbrain.saveBrain("bot_brain.brn")
 
 def sayThis(text):
-    ser.write('0')#make it vibrate and start loading bar
-    speak.Speak(text)
-    ser.write('a')#stop the loading bar
-    #print("\n"+text+" is said\n")
+    #ser.write('0')#make it vibrate and start loading bar
+    #speak.Speak(text)
+    #ser.write('a')#stop the loading bar
+    print("\n"+text+" is said\n")
 
 @route('/bot')
 def startpage():
@@ -105,6 +105,15 @@ def do_bot():
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
 
     <script>
+            var msg = new SpeechSynthesisUtterance();
+            msg.lang = 'it-IT';
+            msg.rate = 0.80;
+            msg.text = "'''+response+'''";
+            window.speechSynthesis.speak(msg);
+
+    
+  
+    
 $("#masterform").submit(function(e) {
   $("#inputbox").fadeOut('''+str(textFadeOutTime)+''');
 });
