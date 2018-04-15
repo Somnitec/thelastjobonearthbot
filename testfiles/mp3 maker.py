@@ -1,4 +1,4 @@
-from gtts import gTTS
-import os
-tts = gTTS(text='hello', lang='en')
-tts.save("hello.mp3")
+import re
+s = "string, With. 'Punctuation'?"
+s = re.sub(r'[^\w\s\\?\\,\\.]','',s)
+print s

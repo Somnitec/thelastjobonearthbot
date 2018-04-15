@@ -1,5 +1,6 @@
 textFadeOutTime = 1000 #in milliseconds
 
+import re
 import thread
 
 import aiml
@@ -11,6 +12,10 @@ from bottle import route, request, run
 from time import sleep
 
 import sys
+
+from googletrans import Translator
+translator = Translator()
+
 sys.coinit_flags = 0
 #import pythoncom
 import win32com.client
@@ -74,8 +79,13 @@ $("#masterform").submit(function(e) {
 def do_bot():
     
     say = request.forms.get('say')
+    say =re.sub(r'[^\w\s\\?\\!\\,\\.]','',say)
     print("input:    "+ say )
-    response = botbrain.respond(say)
+    saytranslated = translator.translate(say, dest='en').text
+
+    responsedry = botbrain.respond(saytranslated)
+    response = translator.translate(responsedry, dest='it').text
+    response =re.sub(r'[^\w\s\\?\\!\\,\\.]','',response)
     #speak.Speak(response)
     thread.start_new_thread(sayThis,(response,))
     sleep(textFadeOutTime/1000.)
@@ -105,11 +115,26 @@ def do_bot():
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
 
     <script>
+            speechSynthesis.cancel()
             var msg = new SpeechSynthesisUtterance();
             msg.lang = 'it-IT';
-            msg.rate = 0.80;
+            //msg.rate = 0.80;
             msg.text = "'''+response+'''";
-            window.speechSynthesis.speak(msg);
+            var t;
+            msg.onstart = function (event) {
+                t = event.timeStamp;
+                console.log('started talking at '+t);
+            };
+
+            msg.onend = function (event) {
+                t = event.timeStamp - t;
+                console.log(event.timeStamp);
+                console.log('finished talking at '+(t / 1000) + " seconds");
+            };
+
+            speechSynthesis.speak(msg);
+
+
 
     
   
@@ -122,5 +147,6 @@ $("#masterform").submit(function(e) {
 </html>
         
     '''
+    
     
 run(host='0.0.0.0', port=8080)
