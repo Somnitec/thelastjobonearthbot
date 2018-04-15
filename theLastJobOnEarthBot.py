@@ -44,7 +44,7 @@ def startpage():
     return '''
 <html>
 <head>
-    <title>Marie's chatbot</title>
+    <title>The Last Job On Earth</title>
 <style>
 .button {
 color: grey;
@@ -96,7 +96,8 @@ $("#masterform").submit(function(e) {
 
 @route('/bot-en', method='POST')
 def do_bot():
-    
+    #ser.write('0')
+    print "starting loading light"
     say = request.forms.get('say')
     say =re.sub(r'[^\w\s\\?\\!\\,\\.]','',say)
     print("input:    "+ say )
@@ -112,7 +113,7 @@ def do_bot():
         <html>
         <head>
         
-        <title>Marie's chatbot</title>
+        <title>The Last Job On Earth</title>
 
 <style>
 .button {
@@ -167,6 +168,10 @@ font-family:"Lucida Console", Monaco, monospace;;
                 t = event.timeStamp - t;
                 console.log(event.timeStamp);
                 console.log('finished talking at '+(t / 1000) + " seconds");
+                 $.ajax({
+            type: 'POST',
+            url: '/donetalking',
+              });
             };
 
             speechSynthesis.speak(msg);
@@ -189,7 +194,7 @@ def startpage():
     return '''
 <html>
 <head>
-    <title>Marie's chatbot</title>
+    <title>The Last Job On Earth</title>
 <style>
 .button {
 color: grey;
@@ -241,7 +246,8 @@ $("#masterform").submit(function(e) {
 
 @route('/bot-it', method='POST')
 def do_bot():
-    
+    #ser.write('0')
+    print "starting loading light"
     say = request.forms.get('say')
     say =re.sub(r'[^\w\s\\?\\!\\,\\.]','',say)
     print("input:    "+ say )
@@ -261,7 +267,7 @@ def do_bot():
         <html>
         <head>
         
-        <title>Marie's chatbot</title>
+        <title>The Last Job On Earth</title>
 
 <style>
 .button {
@@ -316,6 +322,10 @@ font-family:"Lucida Console", Monaco, monospace;;
                 t = event.timeStamp - t;
                 console.log(event.timeStamp);
                 console.log('finished talking at '+(t / 1000) + " seconds");
+                $.ajax({
+            type: 'POST',
+            url: '/donetalking',
+              });
             };
 
             speechSynthesis.speak(msg);
@@ -333,5 +343,10 @@ $("#masterform").submit(function(e) {
 </html>
         
     '''
+
+@route('/donetalking', method='POST')
+def do_bot():
+    #ser.write('a')#stop the loading bar
+    print "talking finished, stopping light!"
     
 run(host='0.0.0.0', port=8080)
