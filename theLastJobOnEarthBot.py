@@ -12,8 +12,9 @@ from bottle import route, request, run
 from time import sleep
 
 
-from googletrans import Translator
-translator = Translator()
+from translate import Translator
+#translator= Translator(from_lang="autodetect",to_lang="en")
+
 
 #import pythoncom
 #ser = serial.Serial('COM3', 9600)
@@ -30,6 +31,7 @@ else:
 
 @route('/bot-en')
 def startpage():
+    translator= Translator(from_lang="autodetect",to_lang="en")
     return '''
 <html>
 <head>
@@ -48,13 +50,13 @@ font-family:"Lucida Console", Monaco, monospace;;
         
 </head>
 <body style="background-color:#000000;overflow:hidden;cursor:none }">
-         <!--<p style="
+         <p style="
             text-align: right;left: -200px;z-index:1000;position:absolute;
             margin: auto;
             width: 100%;
             padding: 10px;padding-top:100px;">
-            <a href='http://localhost:8080/bot-en' class='button' style='border: 4px solid grey;'>EN</a><a href='http://localhost:8080/bot-it' class='button'>IT</a>
-            </p>-->
+            <a href='http://localhost:8080/bot-en' class='button' style='border: 4px solid grey;'>EN</a><a href='http://localhost:8080/bot-nl' class='button'>NL</a>
+            </p>
     <form action="/bot-en" method="post" id="masterform">
         <input name="say" type="text" id="inputbox" autofocus autocomplete="off" placeholder="write to the bot here" style="
             color:white;
@@ -88,7 +90,7 @@ def do_bot():
     #ser.write('0')
     print "starting loading light"
     say = request.forms.get('say')
-    say = translator.translate(say, dest='en').text
+    #say = translator.translate(say, dest='en').text
     say =re.sub(r'[\"\']','',say)
     print("input:    "+ say )
     response = botbrain.respond(say)
@@ -117,13 +119,13 @@ font-family:"Lucida Console", Monaco, monospace;;
         
         </head>
         <body style="background-color:#000000;overflow:hidden;cursor: none;">
-                <!--<p style="
+                <p style="
             text-align: right;left: -200px;z-index:1000;position:absolute;
             margin: auto;
             width: 100%;
             padding: 10px;padding-top:100px;">
-            <a href='http://localhost:8080/bot-en' class='button'  style='border: 4px solid grey;'>EN</a><a href='http://localhost:8080/bot-it' class='button'>IT</a>
-            </p>-->
+            <a href='http://localhost:8080/bot-en' class='button'  style='border: 4px solid grey;'>EN</a><a href='http://localhost:8080/bot-nl' class='button'>NL</a>
+            </p>
         <form action="/bot-en" method="post" id="masterform">
         <input name="say" type="text" id="inputbox" autofocus  autocomplete="off" placeholder="write to the bot here" style="
             color:white;
@@ -177,7 +179,7 @@ $("#masterform").submit(function(e) {
 </html>
         
     '''
-@route('/bot-it')
+@route('/bot-nl')
 def startpage():
     return '''
 <html>
@@ -202,10 +204,10 @@ font-family:"Lucida Console", Monaco, monospace;;
             margin: auto;
             width: 100%;
             padding: 10px;padding-top:100px;">
-            <a href='http://localhost:8080/bot-en' class='button'>EN</a><a href='http://localhost:8080/bot-it' class='button'  style='border: 4px solid grey;'>IT</a>
+            <a href='http://localhost:8080/bot-en' class='button'>EN</a><a href='http://localhost:8080/bot-nl' class='button'  style='border: 4px solid grey;'>NL</a>
             </p>
-    <form action="/bot-it" method="post" id="masterform">
-        <input name="say" type="text" id="inputbox" autofocus autocomplete="off" placeholder="scrivi qui al bot" style="
+    <form action="/bot-nl" method="post" id="masterform">
+        <input name="say" type="text" id="inputbox" autofocus autocomplete="off" placeholder="typ hier met de bot" style="
             color:white;
             background-color:#000000;
             padding-left:5%;
@@ -232,18 +234,20 @@ $("#masterform").submit(function(e) {
 </html>
     '''
 
-@route('/bot-it', method='POST')
+@route('/bot-nl', method='POST')
 def do_bot():
     #ser.write('0')
     print "starting loading light"
     say = request.forms.get('say')
     say =re.sub(r'[\"\']','',say)
     print("input:    "+ say )
-    saytranslated = translator.translate(say, dest='en').text
+    translator= Translator(from_lang="nl",to_lang="en")
+    saytranslated = translator.translate(say)
     print("input english:    "+ saytranslated )
     responsedry = botbrain.respond(saytranslated)
     print("response english:    "+ responsedry )
-    response = translator.translate(responsedry, dest='it').text
+    translator= Translator(from_lang="en",to_lang="nl")
+    response = translator.translate(responsedry)
     
     print("response: " + response ) 
     response =re.sub(r'[\"\']','',response)#removing potentially problematic quotation marks
@@ -276,10 +280,10 @@ font-family:"Lucida Console", Monaco, monospace;;
             margin: auto;
             width: 100%;
             padding: 10px;padding-top:100px;">
-            <a href='http://localhost:8080/bot-en' class='button'>EN</a><a href='http://localhost:8080/bot-it' class='button'  style='border: 4px solid grey;'>IT</a>
+            <a href='http://localhost:8080/bot-en' class='button'>EN</a><a href='http://localhost:8080/bot-nl' class='button'  style='border: 4px solid grey;'>NL</a>
             </p>
-        <form action="/bot-it" method="post" id="masterform">
-        <input name="say" type="text" id="inputbox" autofocus  autocomplete="off" placeholder="scrivi qui al bot" style="
+        <form action="/bot-nl" method="post" id="masterform">
+        <input name="say" type="text" id="inputbox" autofocus  autocomplete="off" placeholder="typ hier met de bot" style="
             color:white;
             background-color:#000000;
             padding-left:5%;
@@ -297,7 +301,7 @@ font-family:"Lucida Console", Monaco, monospace;;
     <script>
             speechSynthesis.cancel()
             var msg = new SpeechSynthesisUtterance();
-            msg.lang = 'it-IT';
+            msg.lang = 'nl-NL';
             //msg.rate = 0.80;
             msg.text = "'''+response+'''";
             var t;
