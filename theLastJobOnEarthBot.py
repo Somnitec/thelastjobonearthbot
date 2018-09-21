@@ -1,3 +1,4 @@
+
 textFadeOutTime = 1000 #in milliseconds
 
 import re
@@ -46,14 +47,14 @@ font-family:"Lucida Console", Monaco, monospace;;
 </style>
         
 </head>
-<body style="background-color:#000000;overflow:hidden; }">
-        <p style="
+<body style="background-color:#000000;overflow:hidden;cursor:none }">
+         <!--<p style="
             text-align: right;left: -200px;z-index:1000;position:absolute;
             margin: auto;
             width: 100%;
             padding: 10px;padding-top:100px;">
             <a href='http://localhost:8080/bot-en' class='button' style='border: 4px solid grey;'>EN</a><a href='http://localhost:8080/bot-it' class='button'>IT</a>
-            </p>
+            </p>-->
     <form action="/bot-en" method="post" id="masterform">
         <input name="say" type="text" id="inputbox" autofocus autocomplete="off" placeholder="write to the bot here" style="
             color:white;
@@ -87,6 +88,7 @@ def do_bot():
     #ser.write('0')
     print "starting loading light"
     say = request.forms.get('say')
+    say = translator.translate(say, dest='en').text
     say =re.sub(r'[\"\']','',say)
     print("input:    "+ say )
     response = botbrain.respond(say)
@@ -114,16 +116,16 @@ font-family:"Lucida Console", Monaco, monospace;;
 </style>
         
         </head>
-        <body style="background-color:#000000;overflow:hidden;">
-                <p style="
+        <body style="background-color:#000000;overflow:hidden;cursor: none;">
+                <!--<p style="
             text-align: right;left: -200px;z-index:1000;position:absolute;
             margin: auto;
             width: 100%;
             padding: 10px;padding-top:100px;">
             <a href='http://localhost:8080/bot-en' class='button'  style='border: 4px solid grey;'>EN</a><a href='http://localhost:8080/bot-it' class='button'>IT</a>
-            </p>
+            </p>-->
         <form action="/bot-en" method="post" id="masterform">
-        <input name="say" type="text" id="inputbox" autofocus  autocomplete="off" style="
+        <input name="say" type="text" id="inputbox" autofocus  autocomplete="off" placeholder="write to the bot here" style="
             color:white;
             background-color:#000000;
             padding-left:5%;
@@ -203,7 +205,7 @@ font-family:"Lucida Console", Monaco, monospace;;
             <a href='http://localhost:8080/bot-en' class='button'>EN</a><a href='http://localhost:8080/bot-it' class='button'  style='border: 4px solid grey;'>IT</a>
             </p>
     <form action="/bot-it" method="post" id="masterform">
-        <input name="say" type="text" id="inputbox" autofocus autocomplete="off" placeholder="scrivi al bot qui" style="
+        <input name="say" type="text" id="inputbox" autofocus autocomplete="off" placeholder="scrivi qui al bot" style="
             color:white;
             background-color:#000000;
             padding-left:5%;
@@ -277,7 +279,7 @@ font-family:"Lucida Console", Monaco, monospace;;
             <a href='http://localhost:8080/bot-en' class='button'>EN</a><a href='http://localhost:8080/bot-it' class='button'  style='border: 4px solid grey;'>IT</a>
             </p>
         <form action="/bot-it" method="post" id="masterform">
-        <input name="say" type="text" id="inputbox" autofocus  autocomplete="off" style="
+        <input name="say" type="text" id="inputbox" autofocus  autocomplete="off" placeholder="scrivi qui al bot" style="
             color:white;
             background-color:#000000;
             padding-left:5%;
