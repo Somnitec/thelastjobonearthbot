@@ -19,6 +19,9 @@ from translate import Translator
 #import pythoncom
 #ser = serial.Serial('COM3', 9600)
 
+language = "nl"
+writehere = "typ hier om met de bot te praten"
+
 
 botbrain = aiml.Kernel()
 
@@ -55,7 +58,7 @@ font-family:"Lucida Console", Monaco, monospace;;
             margin: auto;
             width: 100%;
             padding: 10px;padding-top:100px;">
-            <a href='http://localhost:8080/bot-en' class='button' style='border: 4px solid grey;'>EN</a><a href='http://localhost:8080/bot-nl' class='button'>NL</a>
+            <a href='http://localhost:8080/bot-en' class='button' style='border: 4px solid grey;'>EN</a><a href='http://localhost:8080/bot-'''+language+'''' class='button'>'''+language.upper()+'''</a>
             </p>
     <form action="/bot-en" method="post" id="masterform">
         <input name="say" type="text" id="inputbox" autofocus autocomplete="off" placeholder="write to the bot here" style="
@@ -124,7 +127,7 @@ font-family:"Lucida Console", Monaco, monospace;;
             margin: auto;
             width: 100%;
             padding: 10px;padding-top:100px;">
-            <a href='http://localhost:8080/bot-en' class='button'  style='border: 4px solid grey;'>EN</a><a href='http://localhost:8080/bot-nl' class='button'>NL</a>
+            <a href='http://localhost:8080/bot-en' class='button'  style='border: 4px solid grey;'>EN</a><a href='http://localhost:8080/bot-'''+language+'''' class='button'>'''+language.upper()+'''</a>
             </p>
         <form action="/bot-en" method="post" id="masterform">
         <input name="say" type="text" id="inputbox" autofocus  autocomplete="off" placeholder="write to the bot here" style="
@@ -179,7 +182,7 @@ $("#masterform").submit(function(e) {
 </html>
         
     '''
-@route('/bot-nl')
+@route('/bot-'+language+'')
 def startpage():
     return '''
 <html>
@@ -204,10 +207,10 @@ font-family:"Lucida Console", Monaco, monospace;;
             margin: auto;
             width: 100%;
             padding: 10px;padding-top:100px;">
-            <a href='http://localhost:8080/bot-en' class='button'>EN</a><a href='http://localhost:8080/bot-nl' class='button'  style='border: 4px solid grey;'>NL</a>
+            <a href='http://localhost:8080/bot-en' class='button'>EN</a><a href='http://localhost:8080/bot-'''+language+'''' class='button'  style='border: 4px solid grey;'>'''+language.upper()+'''</a>
             </p>
-    <form action="/bot-nl" method="post" id="masterform">
-        <input name="say" type="text" id="inputbox" autofocus autocomplete="off" placeholder="typ hier met de bot" style="
+    <form action="/bot-'''+language+'''" method="post" id="masterform">
+        <input name="say" type="text" id="inputbox" autofocus autocomplete="off" placeholder="'''+writehere+'''" style="
             color:white;
             background-color:#000000;
             padding-left:5%;
@@ -234,19 +237,19 @@ $("#masterform").submit(function(e) {
 </html>
     '''
 
-@route('/bot-nl', method='POST')
+@route('/bot-'+language+'', method='POST')
 def do_bot():
     #ser.write('0')
     print "starting loading light"
     say = request.forms.get('say')
     say =re.sub(r'[\"\']','',say)
     print("input:    "+ say )
-    translator= Translator(from_lang="nl",to_lang="en")
+    translator= Translator(from_lang=language,to_lang="en")
     saytranslated = translator.translate(say)
     print("input english:    "+ saytranslated )
     responsedry = botbrain.respond(saytranslated)
     print("response english:    "+ responsedry )
-    translator= Translator(from_lang="en",to_lang="nl")
+    translator= Translator(from_lang="en",to_lang=language)
     response = translator.translate(responsedry)
     
     print("response: " + response ) 
@@ -280,10 +283,10 @@ font-family:"Lucida Console", Monaco, monospace;;
             margin: auto;
             width: 100%;
             padding: 10px;padding-top:100px;">
-            <a href='http://localhost:8080/bot-en' class='button'>EN</a><a href='http://localhost:8080/bot-nl' class='button'  style='border: 4px solid grey;'>NL</a>
+            <a href='http://localhost:8080/bot-en' class='button'>EN</a><a href='http://localhost:8080/bot-'''+language+'''' class='button'  style='border: 4px solid grey;'>'''+language.upper()+'''</a>
             </p>
-        <form action="/bot-nl" method="post" id="masterform">
-        <input name="say" type="text" id="inputbox" autofocus  autocomplete="off" placeholder="typ hier met de bot" style="
+        <form action="/bot-'''+language+'''" method="post" id="masterform">
+        <input name="say" type="text" id="inputbox" autofocus  autocomplete="off" placeholder="'''+writehere+'''+" style="
             color:white;
             background-color:#000000;
             padding-left:5%;
@@ -301,7 +304,7 @@ font-family:"Lucida Console", Monaco, monospace;;
     <script>
             speechSynthesis.cancel()
             var msg = new SpeechSynthesisUtterance();
-            msg.lang = 'nl-NL';
+            msg.lang = "'''+language+'''-'''+language.upper()+'''";
             //msg.rate = 0.80;
             msg.text = "'''+response+'''";
             var t;
