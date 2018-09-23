@@ -53,13 +53,13 @@ font-family:"Lucida Console", Monaco, monospace;;
         
 </head>
 <body style="background-color:#000000;overflow:hidden;cursor:none }">
-         <p style="
+         <!--<p style="
             text-align: right;left: -200px;z-index:1000;position:absolute;
             margin: auto;
             width: 100%;
             padding: 10px;padding-top:100px;">
             <a href='http://localhost:8080/bot-en' class='button' style='border: 4px solid grey;'>EN</a><a href='http://localhost:8080/bot-'''+language+'''' class='button'>'''+language.upper()+'''</a>
-            </p>
+            </p>-->
     <form action="/bot-en" method="post" id="masterform">
         <input name="say" type="text" id="inputbox" autofocus autocomplete="off" placeholder="write to the bot here" style="
             color:white;
@@ -122,13 +122,13 @@ font-family:"Lucida Console", Monaco, monospace;;
         
         </head>
         <body style="background-color:#000000;overflow:hidden;cursor: none;">
-                <p style="
+              <!--<p style="
             text-align: right;left: -200px;z-index:1000;position:absolute;
             margin: auto;
             width: 100%;
             padding: 10px;padding-top:100px;">
             <a href='http://localhost:8080/bot-en' class='button'  style='border: 4px solid grey;'>EN</a><a href='http://localhost:8080/bot-'''+language+'''' class='button'>'''+language.upper()+'''</a>
-            </p>
+            </p>-->
         <form action="/bot-en" method="post" id="masterform">
         <input name="say" type="text" id="inputbox" autofocus  autocomplete="off" placeholder="write to the bot here" style="
             color:white;
